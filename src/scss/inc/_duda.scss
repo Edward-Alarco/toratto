@@ -1,0 +1,53 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.duda{
+    background: url(../../images/inicio/bg_duda.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 280px;
+    @include m.flex(center, 0);
+    .row{
+        @include m.flex(space-between, 30px);
+    }
+    p, h2{
+        color: v.$blanco;
+    }
+    h2{
+        font-family: v.$ampleBold;
+        margin-bottom: 1.8rem;
+    }
+    p{
+        font-size: 1.6rem;
+        font-family: v.$ampleRegular;
+    }
+
+    .contact_box{
+        display: block;
+        width: 310px;
+        border-radius: 20px 20px 20px 0;
+        overflow: hidden;
+        background: rgba($color: v.$blanco, $alpha: .1);
+        &>div{
+            width: 100%;
+            &:nth-child(1){
+                padding-block: 14px;
+            }
+            &:nth-child(2){
+                background: v.$verde;
+                padding: 6px 10px;
+                border-radius: 20px 0 20px 0;
+            }
+        }
+        img{
+            display: block;
+            @include m.max_width(116px);
+            margin-inline: auto;
+        }
+        p{
+            font-family: v.$heavy;
+            text-align: center;
+        }
+    }
+
+}

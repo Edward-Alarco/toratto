@@ -1,0 +1,80 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    font-size: 16px;
+}
+
+picture{
+    display: block;
+}
+
+.w-100{width: 100%;}
+.h-100{height: 100%;}
+.wh-100{
+    @extend .w-100;
+    @extend .h-100;
+}
+
+img{
+    vertical-align: top;
+    height: auto;
+}
+
+.p-relative{
+    position: relative;
+}
+
+.row.start{
+    align-items: flex-start !important;
+}
+
+.p-absolute{
+    position: absolute;
+}
+
+a,button,input[type="submit"]{
+    cursor: pointer;
+    @include m.transition;
+}
+
+main, section, header, footer, aside, nav{
+    width: 100%;
+}
+
+p{
+    line-height: 1.2em;
+}
+
+a{
+    text-decoration: none;
+}
+
+textarea, button, input, select, option {
+    outline: none;
+}
+
+.contenedor{
+    width: min(88%, 1500px);
+    margin-inline: auto;
+    &.xl{
+        width: min(94%, 1760px);
+    }
+    &.small{
+        width: min(88%, 1400px);
+    }
+}
+
+.hr{
+    @include m.hr(v.$azul);
+}
+
+video{
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+}

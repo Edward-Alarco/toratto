@@ -1,0 +1,7 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+footer{
+    background: transparent linear-gradient(180deg, v.$azul 0%, #003D7A 100%) 0% 0% no-repeat padding-box;
+    padding: 4rem 0 2rem;
+}

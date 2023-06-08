@@ -1,0 +1,116 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: v.$blanco;
+    @include m.shadow(0,3px,6px,v.$sombra);
+    height: 132px;
+    nav{
+        width: 100%;
+        @include m.flex(space-between, 20px);
+        border-bottom: 1px solid rgba($color: v.$verde, $alpha: .2);
+        min-height: 40px;
+        a{
+            font-family: v.$black;
+            @include m.flex(flex-end, 10px);
+            p{
+                font-size: 1.25rem;
+                color: v.$azul;
+            }
+        }
+    }
+    .row{
+        @include m.flex(space-between, 20px);
+    }
+    .logo{
+        width: 100%;
+        max-width: 275px
+    }
+    &>.contenedor{
+        padding-block: 10px;
+    }
+}
+
+.navbar{
+    @include m.flex(flex-end, 30px);
+    ul{
+        list-style: none;
+        @include m.flex(center, 36px);
+        a{
+            font-size: 1.25rem;
+            margin: 0;
+            position: relative;
+            font-family: v.$heavy;
+        }
+        li{
+            &:not(:last-child){
+                a{
+                    color: v.$azul;
+                    padding: 0;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        @include m.centrar_absolute;
+                        @include m.transition;
+                        width: 0%;
+                        height: 2px;
+                        background: v.$verde;
+                    }
+                    &:hover{
+                        &::before{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            &:last-child{
+                a{
+                    color: v.$blanco;
+                    background: v.$verde;
+                    border-radius: 20px 0 20px 0;
+                    border: 2px solid v.$verde;
+                    padding: 5px 10px;
+                    @include m.transition;
+                    &:hover{
+                        background: transparent;
+                        color: v.$verde;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#burger{
+    background: none;
+    border: none;
+    padding: 6px;
+    margin: 0;
+    height: auto;
+    @include m.flex(center, 8px);
+    flex-direction: column;
+    width: 30px;
+    div{
+        @include m.transition;
+        width: 30px;
+        height: 4px;
+        border-radius: 200px;
+        background: v.$azul;
+    }
+    &:hover{
+        div{
+            width: 36px;
+            margin-left: -3px;
+        }
+    }
+}
+
+.tel{
+    display: flex;
+    align-items: center;
+}

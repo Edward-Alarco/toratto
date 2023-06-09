@@ -469,7 +469,7 @@ p {
   font-size: 1.1rem;
 }
 
-body.page-template-front-page {
+body.page-template-departamentos-en-venta, body.single-departamento, body.page-template-front-page {
   background: url(../../images/inicio/fondo_inicio.png) no-repeat fixed center;
   background-size: cover;
 }
@@ -516,6 +516,17 @@ main .ubication {
 }
 .ubication div.info p {
   font-size: 1.5rem;
+}
+.ubication div.logo {
+  background: #ffffff;
+  border-radius: 20px 0 20px 0;
+  width: 100%;
+  max-width: 250px;
+  padding-block: 5px;
+}
+.ubication div.logo img {
+  display: block;
+  margin: 0 auto;
 }
 .ubication div.place {
   background: rgba(0, 76, 151, 0.71);
@@ -714,6 +725,41 @@ main .ubication {
   font-size: 29px;
 }
 
+.valores {
+  background: #807E7E;
+  padding: 4.5rem 0;
+}
+.valores .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+.valores .valor {
+  width: 100%;
+  max-width: 375px;
+}
+.valores .valor img {
+  display: block;
+  width: 100%;
+  margin: 0 auto 10px;
+}
+.valores .valor h3 {
+  color: #ffffff;
+  text-align: center;
+  font-family: "AvenirBlack";
+}
+
+.listado_departamentos {
+  padding-top: 5rem;
+}
+.listado_departamentos .contenedor_depas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px 40px;
+}
+
 .single_banner {
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -847,6 +893,179 @@ a.back p {
   color: #ffffff;
   font-family: "AvenirMedium";
   margin: 0;
+}
+
+.depa_banner {
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+  background-size: cover !important;
+  min-height: 72vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-direction: column;
+}
+.depa_banner .ubication {
+  align-items: flex-start;
+}
+.depa_banner .ubication .info {
+  width: 100%;
+  max-width: 290px;
+}
+.depa_banner .ubication .info p {
+  text-align: center;
+  font-size: 1.65rem;
+}
+.depa_banner .ubication .place-2 {
+  border-radius: 20px 0 20px 0;
+  background: #004C97;
+  width: 100%;
+  max-width: 225px;
+}
+.depa_banner .ubication .place-2 p {
+  color: #ffffff;
+  font-size: 2.15rem;
+  text-align: center;
+}
+
+.hero_img {
+  padding: 5rem 0 4rem;
+}
+.hero_img .vistas img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.0784313725);
+}
+.hero_img .xl {
+  background: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.0784313725);
+  padding: 1.5rem 3rem;
+  border-radius: 0 0 20px 20px;
+}
+.hero_img .depa_info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 50px;
+}
+.hero_img .depa_info p {
+  font-family: "AvenirMedium";
+}
+.hero_img .depa_info p b {
+  font-family: "AvenirHeavy";
+  display: block;
+}
+.hero_img .depa_info div:has(> p) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.hero_img .depa_info div:has(> p) p {
+  max-width: 220px;
+  color: #004C97;
+}
+.hero_img .waze {
+  background: #004C97;
+  border-color: #004C97;
+  padding-inline: 30px;
+}
+.hero_img .waze img {
+  max-width: 36px;
+}
+.hero_img .waze:hover {
+  background: #6CC24A;
+  border-color: #6CC24A;
+}
+.hero_img .download {
+  gap: 10px;
+  padding-inline: 20px;
+}
+.hero_img .download img {
+  filter: brightness(100);
+  max-width: 28px;
+}
+.hero_img .download:hover img {
+  filter: none;
+}
+.hero_img a {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0 20px 0;
+  background: #6CC24A;
+  border: 2px solid #6CC24A;
+  min-height: 64px;
+  color: #ffffff;
+  font-family: "AvenirHeavy";
+  text-align: center;
+  font-size: 1.4rem;
+  border-radius: 0 20px 0 20px;
+}
+.hero_img a:hover {
+  background: transparent;
+  color: #6CC24A;
+}
+
+.caracteristicas {
+  padding: 2.5rem 0 4.25rem;
+}
+.caracteristicas h2 {
+  color: #ffffff;
+  font-family: "AvenirHeavy";
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+}
+.caracteristicas_caja {
+  min-height: 40vh;
+  background: #807E7E;
+  border-radius: 75px;
+  padding: 3.25rem;
+}
+.caracteristicas-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 42px 30px;
+}
+.caracteristicas .caracteristica {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  max-width: 450px;
+}
+.caracteristicas .caracteristica img {
+  display: block;
+  width: 86px;
+  height: 86px;
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.caracteristicas .caracteristica div {
+  width: calc(100% - 102px);
+}
+.caracteristicas .caracteristica div h3 {
+  color: #6CC24A;
+  font-family: "AvenirBlack";
+  font-size: 1.3rem;
+}
+.caracteristicas .caracteristica div p {
+  color: #ffffff;
+  font-family: "AvenirMedium";
+  font-weight: 100;
+  line-height: 1.4em;
 }
 
 header {

@@ -1,0 +1,11 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.listado_departamentos{
+    padding-top: 5rem;
+    .contenedor{
+        &_depas{
+            @include m.grid(2, 50px 40px);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.valores{
+    background: v.$gris;
+    padding: 4.5rem 0;
+    .row{
+        @include m.flex(space-around, 20px);
+    }
+    .valor{
+        @include m.max_width(375px);
+        img{
+            display: block;
+            width: 100%;
+            margin: 0 auto 10px;
+        }
+        h3{
+            color: v.$blanco;
+            text-align: center;
+            font-family: v.$black;
+        }
+    }
+}

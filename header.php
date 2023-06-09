@@ -30,7 +30,9 @@
     <div class="contenedor">
         <div class="row">
             <div class="col">
-                <img src="<?php echo IMG; ?>/inicio/logo.png" class="logo">
+                <a href="<?php echo esc_url(home_url('/')) ?>">
+                    <img src="<?php echo IMG; ?>/inicio/logo.png" class="logo">
+                </a>
             </div>
             <div class="col navbar">
                 <?php wp_nav_menu(array('theme_location'=>'header-menu','menu_class'=>'ul_menu')); ?>

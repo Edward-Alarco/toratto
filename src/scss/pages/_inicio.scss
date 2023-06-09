@@ -1,9 +1,13 @@
 @use "base/mixins" as m;
 @use "base/variables" as v;
 
-body.page-template-front-page{
-    background: url(../../images/inicio/fondo_inicio.png) no-repeat fixed center;
-    background-size: cover;
+body{
+    &.page-template-departamentos-en-venta,
+    &.single-departamento,
+    &.page-template-front-page{
+        background: url(../../images/inicio/fondo_inicio.png) no-repeat fixed center;
+        background-size: cover;
+    }
 }
 
 main{
@@ -41,6 +45,16 @@ main{
             padding: 12px 16px;
             p{
                 font-size: 1.5rem;
+            }
+        }
+        &.logo{
+            background: v.$blanco;
+            border-radius: 20px 0 20px 0;
+            @include m.max_width(250px);
+            padding-block: 5px;
+            img{
+                display: block;
+                margin: 0 auto;
             }
         }
         &.place{

@@ -27,7 +27,9 @@
         width: 310px;
         border-radius: 20px 20px 20px 0;
         overflow: hidden;
+        border: 2px solid rgba($color: v.$blanco, $alpha: 0);
         background: rgba($color: v.$blanco, $alpha: .1);
+        @include m.transition;
         &>div{
             width: 100%;
             &:nth-child(1){
@@ -39,14 +41,22 @@
                 border-radius: 20px 0 20px 0;
             }
         }
-        img{
+        img, svg{
             display: block;
             @include m.max_width(116px);
             margin-inline: auto;
+            @include m.transition;
         }
         p{
             font-family: v.$heavy;
             text-align: center;
+        }
+        &:hover{
+            background: transparent;
+            border-color: v.$verde;
+            #dialog{
+                fill: v.$verde;
+            }
         }
     }
 

@@ -12,17 +12,17 @@ get_header();
             <ul class="splide__list wh-100">
                 <li class="splide__slide wh-100">
                     <div class="p-absolute ubication">
-                        <div><p>En construcción</p></div>
-                        <div><p>Livorno</p></div>
-                        <div><p>Lince</p></div>
+                        <div class="info"><p>Pre venta</p></div>
+                        <div class="place"><p>Lombardía</p></div>
+                        <div class="place-2"><p>Lince</p></div>
                     </div>
                     <img src="<?php echo IMG; ?>/inicio/hero1.png" class="wh-100">
                 </li>
                 <li class="splide__slide wh-100">
                     <div class="p-absolute ubication">
-                        <div><p>Pre venta</p></div>
-                        <div><p>Lombardía</p></div>
-                        <div><p>Lince</p></div>
+                        <div class="info"><p>Pre venta</p></div>
+                        <div class="place"><p>Lombardía</p></div>
+                        <div class="place-2"><p>Lince</p></div>
                     </div>
                     <img src="<?php echo IMG; ?>/inicio/hero2.png" class="wh-100">
                 </li>
@@ -30,6 +30,8 @@ get_header();
         </div>
     </div>
 </main>
+
+<?php get_template_part('inc/informacion_adicional'); ?>
 
 <section class="en_venta">
     <div class="contenedor">
@@ -42,6 +44,9 @@ get_header();
 		        <ul class="splide__list">
 			        <li class="splide__slide">
                         <div class="card card_departamento">
+                            <div class="card_tag">
+                                <span>Pre Venta</span>
+                            </div>
                             <div class="card_image">
                                 <img src="<?php echo IMG; ?>/inicio/card.png">
                             </div>
@@ -74,13 +79,91 @@ get_header();
             </div>
         </div>
     </div>
+    <div class="contenedor">
+        <a href="#">Ver todos los proyectos</a>
+    </div>
 </section>
+
+<?php get_template_part('inc/desc_temporada'); ?>
 
 <?php get_template_part('inc/duda'); ?>
 
+<?php 
+    global $wp_query;
+    $wp_query = new WP_Query( array(
+        'post_type' => 'post', 
+        'posts_per_page' => 3,
+        'post_status' => 'publish'
+    ));
+?>
+
 <section class="ultimas_noticias">
     <div class="contenedor">
-        
+        <h2>Últimas noticias<br>del mundo inmobiliario</h2>
+        <div class="row">
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+            <?php if(has_post_thumbnail()): ?>
+            <a class="post" href="<?php the_permalink(); ?>" title="<?php the_title();?>">
+                <div class="post_image">
+                    <?php
+                        $thumbID = get_post_thumbnail_id( $post->ID );
+                        $imgDestacada = wp_get_attachment_image_src( $thumbID, 'thumbnail' );
+                        echo '<img src="'.$imgDestacada[0].'" title="'.get_the_title().'" alt="'.get_the_title().'">';
+                    ?>
+                </div>
+                <div class="post_information">
+                    <div class="post_head">
+                        <p>Mar-15</p>
+                        <h3><?php the_title();?></h3>
+                    </div>
+                    <span>Ver más</span>
+                </div>
+            </a>
+            <?php endif; ?>
+            <?php endwhile;endif; ?>
+            <?php wp_reset_postdata(); ?>
+        </div>
+        <a href="#">Ver todos los proyectos</a>
+    </div>
+</section>
+
+<section class="sociales">
+    <div class="contenedor">
+        <h2>¡Síguenos en nuestras redes sociales!</h2>
+        <div class="social">
+            <ul>
+                <?php get_template_part('inc/redes_sociales'); ?>
+            </ul>
+        </div>
+    </div>
+    <div class="contenedor xxl">
+        <div class="splide" id="splidePublications">
+            <div class="splide__track">
+		        <ul class="splide__list">
+			        <li class="splide__slide">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHubSpotEspanol%2Fposts%2Fpfbid02VtEGvpeY2HbJ7uJpa4KRamJUQApY2ac76KTQetqoEhYYancmEm5U1htnxj6Wnidtl&show_text=true&width=500" width="500" height="713" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </li>
+                    <li class="splide__slide">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHubSpotEspanol%2Fposts%2Fpfbid02VtEGvpeY2HbJ7uJpa4KRamJUQApY2ac76KTQetqoEhYYancmEm5U1htnxj6Wnidtl&show_text=true&width=500" width="500" height="713" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </li>
+                    <li class="splide__slide">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHubSpotEspanol%2Fposts%2Fpfbid02VtEGvpeY2HbJ7uJpa4KRamJUQApY2ac76KTQetqoEhYYancmEm5U1htnxj6Wnidtl&show_text=true&width=500" width="500" height="713" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </li>
+                    <li class="splide__slide">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHubSpotEspanol%2Fposts%2Fpfbid02VtEGvpeY2HbJ7uJpa4KRamJUQApY2ac76KTQetqoEhYYancmEm5U1htnxj6Wnidtl&show_text=true&width=500" width="500" height="713" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </li>
+                    <li class="splide__slide">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHubSpotEspanol%2Fposts%2Fpfbid02VtEGvpeY2HbJ7uJpa4KRamJUQApY2ac76KTQetqoEhYYancmEm5U1htnxj6Wnidtl&show_text=true&width=500" width="500" height="713" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </li>
+                    <li class="splide__slide">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHubSpotEspanol%2Fposts%2Fpfbid02VtEGvpeY2HbJ7uJpa4KRamJUQApY2ac76KTQetqoEhYYancmEm5U1htnxj6Wnidtl&show_text=true&width=500" width="500" height="713" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </li>
+                    <li class="splide__slide">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FHubSpotEspanol%2Fposts%2Fpfbid02VtEGvpeY2HbJ7uJpa4KRamJUQApY2ac76KTQetqoEhYYancmEm5U1htnxj6Wnidtl&show_text=true&width=500" width="500" height="713" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </li>
+		        </ul>
+            </div>
+        </div>
     </div>
 </section>
 

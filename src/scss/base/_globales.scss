@@ -20,6 +20,10 @@ picture{
     @extend .h-100;
 }
 
+h1, h2, h3, h4, h5, h6, p, a{
+    margin: 0;
+}
+
 img{
     vertical-align: top;
     height: auto;
@@ -63,6 +67,10 @@ textarea, button, input, select, option {
     margin-inline: auto;
     &.xl{
         width: min(94%, 1760px);
+    }
+    &.xxl{
+        width: 100%;
+        max-width: 100%;
     }
     &.small{
         width: min(88%, 1400px);

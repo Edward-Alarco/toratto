@@ -1,0 +1,78 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.post{
+    display: block;
+    @include m.max_width(400px);
+    @include m.shadow(0,3px,6px,v.$gris);
+    border-radius: 10px;
+    overflow: hidden;
+    &>div, img{
+        width: 100%;
+    }
+    &_image{
+        overflow: hidden;
+        max-height: 225px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            @include m.transition;
+        }
+    }
+    &_information{
+        padding: 1.5rem;
+        span{
+            @include m.boton(44px, 1.1rem);
+            @include m.max_width(180px);
+            margin-top: 24px;
+            margin-inline: auto;
+        }
+    }
+    &_head{
+        p{
+            font-size: 1.2rem;
+            color: v.$verde;
+            font-family: v.$medium;
+            margin-bottom: 4px;
+        }
+        h3{
+            color: v.$azul;
+            font-size: 1.3rem;
+            font-family: v.$heavy;
+        }
+    }
+    &:hover{
+        .post{
+            &_image{
+                img{
+                    transform: scale(1.075);
+                }
+            }
+        }
+        span{
+            background: transparent;
+            color: v.$verde;
+        }
+    }
+
+    &.small_post{
+        .post{
+            &_head{
+                p{
+                    font-size: .9rem;
+                }
+                h3{
+                    font-size: 1.1rem;
+                }
+            }
+            &_information{
+                span{
+                    @include m.boton(38px, 1rem);
+                    @include m.max_width(140px);   
+                }
+            }
+        }
+    }
+}

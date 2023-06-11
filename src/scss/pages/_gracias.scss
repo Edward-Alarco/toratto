@@ -1,0 +1,86 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.thanks{
+    min-height: calc(100vh - 132px);
+    background: url(../../images/contacto/bg.jpg) no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    padding-block: 2.75rem;
+    @include m.flex(center, 0);
+    flex-direction: column;
+    .contenido{
+        @include m.max_width(470px);
+        &>div{
+            width: 100%;
+        }
+        h1{
+            color: v.$azul;      
+            font-family: v.$ampleRegular;
+            font-size: 2.75rem;
+            margin-bottom: 1.4rem;
+            b, strong{
+                display: block;
+                color: v.$blanco;
+                font-family: v.$ampleBold;
+            }
+            span{
+                padding-left: 40px;
+            }
+        }
+        &_titulo{
+            background: v.$verde;
+            border-radius: 80px 0 80px 0;
+            min-height: 260px;
+            padding: 2rem;
+            p{
+                text-align: center;
+                color: v.$blanco;
+                font-family: v.$medium;
+            }
+            a{
+                @include m.boton(44px, 1.1rem);
+                @include m.max_width(180px);
+                background: v.$azul;
+                border-color: v.$azul;
+                margin: 14px auto 0;
+                &:hover{
+                    color: v.$azul;
+                }
+            }
+        }
+        &_redes{
+            margin-top: 30px;
+            p{
+                color: v.$azul;
+                font-family: v.$light;
+                text-align: center;
+            }
+            ul{
+                margin-top: 16px;
+                @include m.flex(center, 10px);
+                list-style: none;
+                li{
+                    a{
+                        width: 46px;
+                        height: 46px;
+                        @include m.flex(center, 0);
+                        border: 2px solid v.$azul;
+                        border-radius: 50%;
+                        i{
+                            font-size: 21px;
+                            color: v.$azul;
+                            @include m.transition;
+                        }
+                        &:hover{
+                            border-color: v.$verde;
+                            i{
+                                color: v.$verde;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.banner_inline{
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: bottom !important;
+    min-height: 42vh;
+    @include m.flex(center, 0);
+    flex-direction: column;
+    padding-block: 2rem;
+    overflow-x: hidden;
+    &.terrenos{
+        background: url(../../images/compra/banner.jpg);
+    }
+    &.trabaja{
+        background: url(../../images/trabaja/banner.jpg);
+    }
+    &.blog{
+        background: url(../../images/blog/banner.jpg);
+    }
+    &.contacto{
+        background: url(../../images/contacto/banner.jpg);
+    }
+    h1{
+        color: v.$blanco;
+        font-family: v.$ampleRegular;
+        font-weight: 100;
+        font-size: 2.5rem;
+        width: fit-content;
+        position: relative;
+        strong, b{
+            display: block;
+            color: v.$blanco;
+            font-family: v.$ampleBold;
+        }
+        span{
+            font-family: v.$ampleBold;
+            color: v.$verde;
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            @include m.hr(v.$blanco);
+            width: 150%;
+        }
+    }
+}

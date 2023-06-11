@@ -1,0 +1,43 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.compra_terrenos{
+    padding: 4rem 0 2rem;
+    .row{
+        @include m.flex(space-between, 30px 0);
+        .col{
+            &:nth-child(1){
+                width: 44%;
+                max-width: 360px;
+                div{
+                    background: v.$gris;
+                    padding: 1.75rem;
+                    border-radius: 20px;
+                }
+                p{
+                    color: v.$blanco;
+                    font-family: v.$medium;
+                }
+            }
+            &:nth-child(2){
+                width: 55%;
+            }
+        }
+        img{
+            width: 100%;
+            border-radius: 20px 0 0 20px;
+        }
+    }   
+    h2{
+        color: v.$verde;
+        text-align: left;
+        font-family: v.$ampleBold;
+        margin-bottom: 1.65rem;
+        position: relative;
+        width: fit-content;
+        @include m.line(8px, v.$gris);
+        max-width: 285px;
+        font-size: 1.95rem;
+        @include m.text-shadow;
+    }
+}

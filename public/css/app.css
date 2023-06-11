@@ -425,6 +425,15 @@ textarea, button, input, select, option {
 .contenedor.small {
   width: min(88%, 1400px);
 }
+.contenedor.side {
+  width: min(94%, 1700px);
+}
+.contenedor.side.left {
+  margin: 0;
+}
+.contenedor.side.right {
+  margin: 0 0 0 auto;
+}
 
 .hr {
   width: 100%;
@@ -767,6 +776,60 @@ main .ubication {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px 40px;
+}
+
+.compra_terrenos {
+  padding: 4rem 0 2rem;
+}
+.compra_terrenos .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px 0;
+}
+.compra_terrenos .row .col:nth-child(1) {
+  width: 44%;
+  max-width: 360px;
+}
+.compra_terrenos .row .col:nth-child(1) div {
+  background: #807E7E;
+  padding: 1.75rem;
+  border-radius: 20px;
+}
+.compra_terrenos .row .col:nth-child(1) p {
+  color: #ffffff;
+  font-family: "AvenirMedium";
+}
+.compra_terrenos .row .col:nth-child(2) {
+  width: 55%;
+}
+.compra_terrenos .row img {
+  width: 100%;
+  border-radius: 20px 0 0 20px;
+}
+.compra_terrenos h2 {
+  color: #6CC24A;
+  text-align: left;
+  font-family: "AmpleAlt";
+  margin-bottom: 1.65rem;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 285px;
+  font-size: 1.95rem;
+  text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+.compra_terrenos h2::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #807E7E;
+  border-radius: 20px 0 20px 0;
+  width: 100%;
+  height: 6px;
 }
 
 .single_banner {
@@ -1168,6 +1231,117 @@ a.back p {
   font-family: "AvenirBlack";
 }
 
+.thanks {
+  min-height: calc(100vh - 132px);
+  background: url(../../images/contacto/bg.jpg) no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  padding-block: 2.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-direction: column;
+}
+.thanks .contenido {
+  width: 100%;
+  max-width: 470px;
+}
+.thanks .contenido > div {
+  width: 100%;
+}
+.thanks .contenido h1 {
+  color: #004C97;
+  font-family: "AmpleSoftRegular";
+  font-size: 2.75rem;
+  margin-bottom: 1.4rem;
+}
+.thanks .contenido h1 b, .thanks .contenido h1 strong {
+  display: block;
+  color: #ffffff;
+  font-family: "AmpleAlt";
+}
+.thanks .contenido h1 span {
+  padding-left: 40px;
+}
+.thanks .contenido_titulo {
+  background: #6CC24A;
+  border-radius: 80px 0 80px 0;
+  min-height: 260px;
+  padding: 2rem;
+}
+.thanks .contenido_titulo p {
+  text-align: center;
+  color: #ffffff;
+  font-family: "AvenirMedium";
+}
+.thanks .contenido_titulo a {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0 20px 0;
+  background: #6CC24A;
+  border: 2px solid #6CC24A;
+  min-height: 44px;
+  color: #ffffff;
+  font-family: "AvenirHeavy";
+  text-align: center;
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 180px;
+  background: #004C97;
+  border-color: #004C97;
+  margin: 14px auto 0;
+}
+.thanks .contenido_titulo a:hover {
+  background: transparent;
+  color: #6CC24A;
+}
+.thanks .contenido_titulo a:hover {
+  color: #004C97;
+}
+.thanks .contenido_redes {
+  margin-top: 30px;
+}
+.thanks .contenido_redes p {
+  color: #004C97;
+  font-family: "AvenirLight";
+  text-align: center;
+}
+.thanks .contenido_redes ul {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+}
+.thanks .contenido_redes ul li a {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border: 2px solid #004C97;
+  border-radius: 50%;
+}
+.thanks .contenido_redes ul li a i {
+  font-size: 21px;
+  color: #004C97;
+  transition: all 0.3s ease;
+}
+.thanks .contenido_redes ul li a:hover {
+  border-color: #6CC24A;
+}
+.thanks .contenido_redes ul li a:hover i {
+  color: #6CC24A;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -1324,6 +1498,7 @@ aside {
   align-items: center;
   justify-content: center;
   gap: 20vh;
+  transition: all 0.3s ease;
   flex-direction: column;
 }
 aside.active {
@@ -1346,6 +1521,12 @@ aside .ul_menu li:not(:last-child) {
 }
 aside .ul_menu li a {
   font-size: 1.25rem;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+aside .ul_menu li a:hover {
+  color: #6CC24A;
+  border-color: #6CC24A;
 }
 aside ul {
   list-style: none;
@@ -1377,11 +1558,18 @@ aside ul.redes li a {
   align-items: center;
   justify-content: center;
   gap: 0;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 50%;
 }
 aside ul.redes li a i {
   font-size: 21px;
+  transition: all 0.3s ease;
+}
+aside ul.redes li a:hover {
+  border-color: #6CC24A;
+}
+aside ul.redes li a:hover i {
+  color: #6CC24A;
 }
 
 .card {
@@ -1637,6 +1825,242 @@ aside ul.redes li a i {
 .post.small_post .post_information span:hover {
   background: transparent;
   color: #6CC24A;
+}
+
+.banner_inline {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: bottom !important;
+  min-height: 42vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-direction: column;
+  padding-block: 2rem;
+  overflow-x: hidden;
+}
+.banner_inline.terrenos {
+  background: url(../../images/compra/banner.jpg);
+}
+.banner_inline.trabaja {
+  background: url(../../images/trabaja/banner.jpg);
+}
+.banner_inline.blog {
+  background: url(../../images/blog/banner.jpg);
+}
+.banner_inline.contacto {
+  background: url(../../images/contacto/banner.jpg);
+}
+.banner_inline h1 {
+  color: #ffffff;
+  font-family: "AmpleSoftRegular";
+  font-weight: 100;
+  font-size: 2.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.banner_inline h1 strong, .banner_inline h1 b {
+  display: block;
+  color: #ffffff;
+  font-family: "AmpleAlt";
+}
+.banner_inline h1 span {
+  font-family: "AmpleAlt";
+  color: #6CC24A;
+}
+.banner_inline h1::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  display: block;
+  background: #ffffff;
+  width: 150%;
+}
+
+.contact_form {
+  padding: 2.5rem 0 4rem;
+}
+.contact_form h2 {
+  color: #6CC24A;
+  text-align: center;
+  font-family: "AmpleAlt";
+  margin-bottom: 3rem;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+  font-size: 1.75rem;
+}
+.contact_form h2::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #807E7E;
+  border-radius: 20px 0 20px 0;
+  width: 100%;
+  height: 6px;
+}
+.contact_form .wpcf7-not-valid-tip {
+  display: block;
+  font-family: "AvenirMedium";
+  font-size: 13px;
+  width: 100% !important;
+}
+.contact_form form {
+  border-radius: 20px;
+  position: relative;
+  background: #807E7E;
+  box-shadow: 0 3px 10px #807E7E;
+  padding: 3rem 2.5rem;
+}
+.contact_form form > p {
+  color: #ffffff;
+  font-family: "AvenirBlack";
+  display: block;
+  margin-bottom: 8px;
+}
+.contact_form .wpcf7-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border-radius: 20px;
+}
+.contact_form .wpcf7-spinner::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  transform-origin: 16px 16px;
+}
+.contact_form .wpcf7 form.invalid .wpcf7-response-output, .contact_form .wpcf7 form.unaccepted .wpcf7-response-output, .contact_form .wpcf7 form.payment-required .wpcf7-response-output {
+  border: none !important;
+  text-align: center;
+  font-family: "AvenirMedium";
+}
+.contact_form .fields {
+  margin-bottom: 22px;
+}
+.contact_form .fields > p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+}
+.contact_form .fields span {
+  width: calc(50% - 20px);
+}
+.contact_form .fields.propietario span:last-child, .contact_form .fields.postulante span:last-child {
+  width: 100%;
+}
+.contact_form .fields input {
+  width: 100%;
+  border-radius: 10px;
+  background: #ffffff;
+  min-height: 54px;
+  border: 1px solid #ffffff;
+  color: #707070;
+  font-family: "AvenirBook";
+  padding-inline: 10px;
+}
+.contact_form .fields input::-moz-placeholder {
+  color: rgba(112, 112, 112, 0.7);
+}
+.contact_form .fields input::placeholder {
+  color: rgba(112, 112, 112, 0.7);
+}
+.contact_form .fields label {
+  display: block;
+  font-family: "AvenirBook";
+  color: rgba(112, 112, 112, 0.7);
+}
+.contact_form .fields .photos {
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  height: 136px;
+  position: relative;
+  overflow: hidden;
+}
+.contact_form .fields .photos label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.contact_form .fields .photos > p {
+  position: absolute;
+  width: 100%;
+  display: contents;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.contact_form .fields .photos span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.contact_form .fields .photos input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+.contact_form .fields .photos img {
+  display: block;
+  width: 100%;
+  max-width: 90px;
+  margin-inline: auto;
+}
+.contact_form input[type=submit] {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0 20px 0;
+  background: #6CC24A;
+  border: 2px solid #6CC24A;
+  min-height: 54px;
+  color: #ffffff;
+  font-family: "AvenirHeavy";
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  max-width: 120px;
+  border-radius: 0 20px 0 20px;
+  margin: 50px auto 0;
+}
+.contact_form input[type=submit]:hover {
+  background: transparent;
+  color: #6CC24A;
+}
+.contact_form small {
+  font-family: "AvenirLight";
+  font-size: 14px;
 }
 
 .search-form {

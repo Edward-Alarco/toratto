@@ -6,6 +6,12 @@
 get_header();
 ?>
 
+<section class="banner_inline blog">
+    <div class="contenedor">
+        <h1>Descubre las últimas noticias <b>en el mundo <span>inmobiliario</span></b></h1>
+    </div>
+</section>
+
 <section class="articulos_blog">
     <div class="contenedor">
         <div class="busqueda_avanzada w-100">

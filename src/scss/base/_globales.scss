@@ -75,6 +75,15 @@ textarea, button, input, select, option {
     &.small{
         width: min(88%, 1400px);
     }
+    &.side{
+        width: min(94%, 1700px);
+        &.left{
+            margin: 0;
+        }
+        &.right{
+            margin: 0 0 0 auto;
+        }
+    }
 }
 
 .hr{

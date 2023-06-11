@@ -137,6 +137,7 @@ aside{
     height: 100vh;
     z-index: 12;
     @include m.flex(center, 20vh);
+    @include m.transition;
     flex-direction: column;
     &.active{
         right: 0;
@@ -160,6 +161,12 @@ aside{
             }
             a{
                 font-size: 1.25rem;
+                padding-bottom: 2px;
+                border-bottom: 1px solid transparent;
+                &:hover{
+                    color: v.$verde;
+                    border-color: v.$verde;
+                }
             }
         }
     }
@@ -180,10 +187,17 @@ aside{
                     width: 46px;
                     height: 46px;
                     @include m.flex(center, 0);
-                    border: 1px solid v.$blanco;
+                    border: 2px solid v.$blanco;
                     border-radius: 50%;
                     i{
                         font-size: 21px;
+                        @include m.transition;
+                    }
+                    &:hover{
+                        border-color: v.$verde;
+                        i{
+                            color: v.$verde;
+                        }
                     }
                 }
             }

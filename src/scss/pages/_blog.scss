@@ -1,0 +1,9 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.articulos_blog{
+    padding: 3.5rem 0;
+    .busqueda_avanzada{
+        @include m.grid(2, 10px);
+    }
+}

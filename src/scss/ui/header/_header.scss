@@ -114,3 +114,79 @@ header{
     display: flex;
     align-items: center;
 }
+
+.bg_aside{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    z-index: 11;
+    display: none;
+    &.active{
+        display: block;
+    }
+}
+
+aside{
+    position: fixed;
+    top: 0;
+    @include m.max_width(480px);
+    right: -480px;
+    background: rgba($color: v.$azul, $alpha: .95);
+    height: 100vh;
+    z-index: 12;
+    @include m.flex(center, 20vh);
+    flex-direction: column;
+    &.active{
+        right: 0;
+    }
+    .toggle{
+        position: absolute;
+        top: 60px;
+        right: 10%;
+        background: none;
+        border: none;
+        padding: 6px;
+        ion-icon{
+            font-size: 40px;
+            color: v.$blanco;
+        }
+    }
+    .ul_menu{
+        li{
+            &:not(:last-child){
+                margin-bottom: 18px;
+            }
+            a{
+                font-size: 1.25rem;
+            }
+        }
+    }
+    ul{
+        list-style: none;
+        i, a{
+            color: v.$blanco;
+        }
+        a{
+            font-family: v.$heavy;
+        }
+        &.redes{
+            @include m.flex(center, 16px 24px);
+            @include m.max_width(200px);
+            li{
+                width: fit-content;
+                a{
+                    width: 46px;
+                    height: 46px;
+                    @include m.flex(center, 0);
+                    border: 1px solid v.$blanco;
+                    border-radius: 50%;
+                    i{
+                        font-size: 21px;
+                    }
+                }
+            }
+        }
+    }
+}

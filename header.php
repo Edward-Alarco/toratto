@@ -36,7 +36,7 @@
             </div>
             <div class="col navbar">
                 <?php wp_nav_menu(array('theme_location'=>'header-menu','menu_class'=>'ul_menu')); ?>
-                <button id="burger">
+                <button class="toggle" id="burger">
                     <div></div>
                     <div></div>
                 </button>
@@ -44,3 +44,14 @@
         </div>
     </div>
 </header>
+
+<div class="bg_aside toggle"></div>
+<aside>
+    <button class="toggle">
+        <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <?php wp_nav_menu(array('theme_location'=>'header-menu','menu_class'=>'ul_menu')); ?>
+    <ul class="redes">
+        <?php get_template_part('inc/redes_sociales'); ?>
+    </ul>
+</aside>

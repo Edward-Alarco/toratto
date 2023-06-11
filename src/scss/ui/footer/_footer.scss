@@ -130,3 +130,81 @@ footer{
         margin-inline: auto;
     }
 }
+
+.float_buttons{
+    position: fixed;
+    right: 0;
+    bottom: 30px;
+    a{
+        @include m.flex(flex-start, 0);
+        border-radius: 75px 0 0 75px;
+        height: 60px;
+        @include m.transition;
+        &:not(:last-child){
+            margin-bottom: 20px;
+        }
+        &.wsp{
+            aspect-ratio: 1/1;
+            background: v.$verde2;
+            border-radius: 75px;
+            @include m.flex(center, 0);
+            i{
+                color: v.$blanco;
+                font-size: 32px;
+            }
+            &:hover{
+                background: v.$verde;
+            }
+        }
+        i{
+            width: auto !important;
+            height: auto !important;
+        }
+        &:not(.wsp){
+            div{
+                i, ion-icon{
+                    font-size: 24px;
+                    width: 30px;
+                    height: 30px;
+                    @include m.transition;
+                    color: v.$blanco;
+                    fill: v.$blanco;
+                }
+                &:nth-child(1){
+                    border-radius: 50%;
+                    background: v.$azul;
+                    aspect-ratio: 1/1;
+                    height: 100%;
+                    @include m.flex(center, 0);
+                }
+                &:nth-child(2){
+                    height: 100%;
+                    padding-right: 1.2rem;
+                    display: flex;
+                    @include m.transition;
+                    align-items: center;
+                    opacity: 0;
+                    p{
+                        color: v.$blanco;
+                        font-family: v.$ampleBold;
+                        font-size: 14px;
+                        font-weight: 100;
+                        max-width: min-content;
+                    }
+                }
+            }
+            &:hover{
+                background: v.$azul;
+                div{
+                    i, ion-icon{
+                        color: v.$verde;
+                        fill: v.$verde;
+                    }
+                    &:nth-child(2){
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

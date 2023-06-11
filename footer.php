@@ -55,6 +55,28 @@
     </div>
 </footer>
 
+<div class="float_buttons">
+    <a href="#" class="wsp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#" class="tel">
+        <div>
+            <i class="fas fa-phone"></i>
+        </div>
+        <div>
+            <p>Llama gratis</p>
+        </div>
+    </a>
+    <a href="#" class="msg">
+        <div>
+            <ion-icon name="chatbubble-ellipses"></ion-icon>
+        </div>
+        <div>
+            <p>Chat online</p>
+        </div>
+    </a>
+</div>
+
 <?php wp_footer();?>
 
 <script>function paddingTop(){document.body.style.paddingTop=document.querySelector("header").offsetHeight+"px"}window.onpaint=paddingTop();</script>

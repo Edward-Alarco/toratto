@@ -478,7 +478,7 @@ p {
   font-size: 1.1rem;
 }
 
-body.page-template-departamentos-en-venta, body.page-template-blog, body.single-departamento, body.page-template-front-page {
+body.page-template-departamentos-en-venta, body.page-template-blog, body.single-departamento, body.page-template-proximos-proyectos, body.page-template-proyectos-entregados, body.page-template-front-page {
   background: url(../../images/inicio/fondo_inicio.png) no-repeat fixed center;
   background-size: cover;
 }
@@ -790,7 +790,7 @@ main .ubication {
 }
 .compra_terrenos .row .col:nth-child(1) {
   width: 44%;
-  max-width: 360px;
+  max-width: 450px;
 }
 .compra_terrenos .row .col:nth-child(1) div {
   background: #807E7E;
@@ -800,6 +800,8 @@ main .ubication {
 .compra_terrenos .row .col:nth-child(1) p {
   color: #ffffff;
   font-family: "AvenirMedium";
+  font-size: 1.4rem;
+  line-height: 1.3em;
 }
 .compra_terrenos .row .col:nth-child(2) {
   width: 55%;
@@ -816,8 +818,7 @@ main .ubication {
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
-  max-width: 285px;
-  font-size: 1.95rem;
+  max-width: 405px;
   text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 .compra_terrenos h2::before {
@@ -1231,6 +1232,67 @@ a.back p {
   font-family: "AvenirBlack";
 }
 
+.proyectos_entregados {
+  padding: 4rem 0 7.5rem;
+}
+.proyectos_entregados .contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.familia {
+  background: url(../../images/entregados/banner_familia.jpg) no-repeat;
+  background-size: cover;
+  background-position: top center;
+  min-height: 400px;
+  padding-block: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-direction: column;
+}
+.familia h2 {
+  color: #004C97;
+  font-family: "AmpleSoftRegular";
+  font-weight: 100;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.familia h2 strong, .familia h2 b {
+  display: block;
+  color: #004C97;
+  font-family: "AmpleAlt";
+}
+.familia h2 span {
+  font-family: "AmpleAlt";
+  color: #6CC24A;
+}
+.familia a {
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0 20px 0;
+  background: #6CC24A;
+  border: 2px solid #6CC24A;
+  min-height: 56px;
+  color: #ffffff;
+  font-family: "AvenirHeavy";
+  text-align: center;
+  font-size: 1.5rem;
+  width: 100%;
+  max-width: 200px;
+}
+.familia a:hover {
+  background: transparent;
+  color: #6CC24A;
+}
+
 .thanks {
   min-height: calc(100vh - 132px);
   background: url(../../images/contacto/bg.jpg) no-repeat;
@@ -1520,7 +1582,7 @@ aside .ul_menu li:not(:last-child) {
   margin-bottom: 18px;
 }
 aside .ul_menu li a {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
 }
@@ -1725,10 +1787,10 @@ aside ul.redes li a:hover i {
 .card_boton a:hover {
   background: #004C97;
 }
-.card:hover .card_information {
+.card:not(.no_hover):hover .card_information {
   padding-bottom: 60px;
 }
-.card:hover .card_boton a {
+.card:not(.no_hover):hover .card_boton a {
   opacity: 1;
   pointer-events: all;
 }
@@ -1853,11 +1915,20 @@ aside ul.redes li a:hover i {
 .banner_inline.contacto {
   background: url(../../images/contacto/banner.jpg);
 }
+.banner_inline.nosotros {
+  background: url(../../images/nosotros/banner.jpg);
+}
+.banner_inline.entregados {
+  background: url(../../images/entregados/banner.jpg);
+}
+.banner_inline.proximos {
+  background: url(../../images/proximos/banner.jpg);
+  min-height: 60vh;
+}
 .banner_inline h1 {
   color: #ffffff;
   font-family: "AmpleSoftRegular";
   font-weight: 100;
-  font-size: 2.5rem;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
@@ -1880,7 +1951,7 @@ aside ul.redes li a:hover i {
   height: 2px;
   display: block;
   background: #ffffff;
-  width: 150%;
+  width: 350%;
 }
 
 .contact_form {

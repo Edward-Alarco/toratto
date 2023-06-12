@@ -22,11 +22,22 @@
     &.contacto{
         background: url(../../images/contacto/banner.jpg);
     }
+    &.nosotros{
+        background: url(../../images/nosotros/banner.jpg);
+    }
+    &.entregados{
+        background: url(../../images/entregados/banner.jpg);
+    }
+    &.proximos{
+        background: url(../../images/proximos/banner.jpg);
+        min-height: 60vh;
+    }
+
     h1{
         color: v.$blanco;
         font-family: v.$ampleRegular;
         font-weight: 100;
-        font-size: 2.5rem;
+        // font-size: 2.5rem;
         width: fit-content;
         position: relative;
         strong, b{
@@ -45,7 +56,7 @@
             bottom: -5px;
             right: 0;
             @include m.hr(v.$blanco);
-            width: 150%;
+            width: 350%;
         }
     }
 }

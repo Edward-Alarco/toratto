@@ -72,6 +72,8 @@ $wp_query = new WP_Query(array(
 
 <?php get_template_part('inc/informacion_adicional'); ?>
 
+<br>
+
 <?php get_template_part('inc/desc_temporada'); ?>
 
 <?php get_template_part('inc/duda'); ?>

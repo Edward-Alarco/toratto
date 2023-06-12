@@ -46,7 +46,8 @@ add_filter('excerpt_length', 'my_excerpt_length');
 function register_my_menus() {
     register_nav_menus(
         array(
-            'header-menu' => __( 'En la cabecera' )
+            'header-menu' => __( 'En la cabecera' ),
+            'sidebar-menu' => __( 'En el sidebar' )
         )
     );
 }

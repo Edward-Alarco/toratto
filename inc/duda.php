@@ -6,7 +6,7 @@
                 <p>No dudes en contactarnos y empieza tu nueva vida</p>
             </div>
             <div class="col">
-                <a class="contact_box" href="#">
+                <a class="contact_box" href="<?php echo esc_url(home_url('contactanos')) ?>">
                     <div>
                         <svg width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="duda">

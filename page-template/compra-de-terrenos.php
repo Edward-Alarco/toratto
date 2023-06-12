@@ -31,7 +31,7 @@ get_header();
 <section class="contact_form">
     <div class="contenedor">
         <h2>Completa el siguiente formulario</h2>
-        <?php echo do_shortcode('[contact-form-7 id="21" title="Compra Terrenos"]') ?>
+        <?php echo do_shortcode('[contact-form-7 id="136" title="Compra Terrenos"]') ?>
     </div>
 </section>
 

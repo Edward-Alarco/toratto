@@ -6,8 +6,10 @@
 get_header();
 ?>
 
-<section class="banner">
-
+<section class="banner_inline nosotros">
+    <div class="contenedor">
+        <h1><b><span>Nosotros</span></b></h1>
+    </div>
 </section>
 
 <?php get_template_part('inc/informacion_adicional'); ?>

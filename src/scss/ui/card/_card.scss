@@ -136,14 +136,16 @@
         }
     }
 
-    &:hover{
-        .card_information{
-            padding-bottom: 60px;
-        }
-        .card_boton{
-            a{
-                opacity: 1;
-                pointer-events: all;
+    &:not(.no_hover){
+        &:hover{
+            .card_information{
+                padding-bottom: 60px;
+            }
+            .card_boton{
+                a{
+                    opacity: 1;
+                    pointer-events: all;
+                }
             }
         }
     }

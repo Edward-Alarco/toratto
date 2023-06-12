@@ -15,7 +15,7 @@ get_header();
 <section class="contact_form">
     <div class="contenedor">
         <h2>Completa el siguiente formulario</h2>
-        <?php echo do_shortcode('[contact-form-7 id="25" title="Trabaja con Nosotros"]') ?>
+        <?php echo do_shortcode('[contact-form-7 id="137" title="Trabaja con Nosotros"]') ?>
     </div>
 </section>
 

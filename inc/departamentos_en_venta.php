@@ -78,6 +78,6 @@
         <?php wp_reset_postdata(); ?>
     </div>
     <div class="contenedor">
-        <a href="#">Ver todos los proyectos</a>
+        <a href="<?php echo esc_url(home_url('departamentos-en-venta')) ?>">Ver todos los proyectos</a>
     </div>
 </section>

@@ -8,7 +8,7 @@
         .col{
             &:nth-child(1){
                 width: 44%;
-                max-width: 360px;
+                max-width: 450px;
                 div{
                     background: v.$gris;
                     padding: 1.75rem;
@@ -17,6 +17,8 @@
                 p{
                     color: v.$blanco;
                     font-family: v.$medium;
+                    font-size: 1.4rem;
+                    line-height: 1.3em;
                 }
             }
             &:nth-child(2){
@@ -36,8 +38,7 @@
         position: relative;
         width: fit-content;
         @include m.line(8px, v.$gris);
-        max-width: 285px;
-        font-size: 1.95rem;
+        max-width: 405px;
         @include m.text-shadow;
     }
 }

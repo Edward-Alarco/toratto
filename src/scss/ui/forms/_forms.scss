@@ -1,37 +1,12 @@
 @use "base/mixins" as m;
 @use "base/variables" as v;
 
-.contact_form{
-    padding: 2.5rem 0 4rem;
-    h2{
-        color: v.$verde;
-        text-align: center;
-        font-family: v.$ampleBold;
-        margin-bottom: 3rem;
-        position: relative;
-        width: fit-content;
-        margin-inline: auto;
-        @include m.line(8px, v.$gris);
-        font-size: 1.75rem;
-    }
+.contacto_section{
     .wpcf7-not-valid-tip{
         display: block;
         font-family: v.$medium;
         font-size: 13px;
         width: 100% !important;
-    }
-    form{
-        border-radius: 20px;
-        position: relative;
-        background: v.$gris;
-        @include m.shadow(0,3px,10px,v.$gris);
-        padding: 3rem 2.5rem;
-        &>p{
-            color: v.$blanco;
-            font-family: v.$black;
-            display: block;
-            margin-bottom: 8px;
-        }
     }
     .wpcf7-spinner{
         position: absolute;
@@ -57,6 +32,53 @@
         text-align: center;
         font-family: v.$medium;
     }
+    small{
+        display: block;
+        color: v.$blanco;
+        font-family: v.$light;
+        font-size: 14px;
+    }
+    select, textarea, input:not([type="submit"]){
+        width: 100%;
+        background: v.$blanco;
+        padding-inline: 10px;
+        min-height: 54px;
+        border-radius: 10px;
+        color: v.$gris2;
+        font-family: v.$bold;
+        border: 1px solid v.$blanco;
+    }
+    textarea{
+        padding-block: 10px;
+    }
+}
+
+.contact_form{
+    padding: 2.5rem 0 4rem;
+    h2{
+        color: v.$verde;
+        text-align: center;
+        font-family: v.$ampleBold;
+        margin-bottom: 3rem;
+        position: relative;
+        width: fit-content;
+        margin-inline: auto;
+        @include m.line(8px, v.$gris);
+        font-size: 1.75rem;
+    }
+    form{
+        border-radius: 20px;
+        position: relative;
+        background: v.$gris;
+        @include m.shadow(0,3px,10px,v.$gris);
+        padding: 3rem 2.5rem;
+        &>p{
+            color: v.$blanco;
+            font-family: v.$black;
+            display: block;
+            margin-bottom: 8px;
+        }
+    }
     .fields{
         margin-bottom: 22px;
         &>p{
@@ -71,14 +93,6 @@
             }            
         }
         input{
-            width: 100%;
-            border-radius: 10px;
-            background: v.$blanco;
-            min-height: 54px;
-            border: 1px solid v.$blanco;
-            color: v.$gris2;
-            font-family: v.$bold;
-            padding-inline: 10px;
             &::placeholder{
                 color: rgba($color: v.$gris2, $alpha: 0.7);
             }
@@ -134,8 +148,59 @@
         border-radius: 0 20px 0 20px;
         margin: 50px auto 0;
     }
-    small{
-        font-family: v.$light;
-        font-size: 14px;
+}
+
+.contact_box{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: v.$gris;
+    border-radius: 30px 0 30px 0;
+    @include m.shadow(0,3px,25px,#807E7E21);
+    padding: 2.75rem 4rem;
+    &>p{
+        font-family: v.$bold;
+        color: v.$blanco;
+        margin-bottom: 14px;
+    }
+    form{
+        width: 100%;
+        p{
+            span{
+                display: block;
+                margin-bottom: 8px;
+            }
+        }
+        input, select, textarea{
+            &::placeholder{
+                color: rgba($color: v.$azul, $alpha: .60);
+            }
+        }
+        select{
+            color: rgba($color: v.$azul, $alpha: .60);
+        }
+        [type="submit"]{
+            margin-top: 28px;
+            width: 100%;
+            @include m.boton(56px, 1.3rem);
+        }
+    }
+}
+
+.contact_planos{
+    form{
+        width: 100%;
+        p{
+            span{
+                display: block;
+                margin-bottom: 8px;
+            }
+        }
+        [type="submit"]{
+            margin-top: 28px;
+            width: 100%;
+            @include m.boton(56px, 1.3rem);
+            border-radius: 0 20px 0 20px;
+        }
     }
 }

@@ -128,7 +128,7 @@ header{
     }
 }
 
-aside{
+aside:not(.posts){
     position: fixed;
     top: 0;
     @include m.max_width(480px);

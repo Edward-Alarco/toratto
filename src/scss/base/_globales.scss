@@ -95,3 +95,11 @@ video{
     width: 100%;
     aspect-ratio: 16/9;
 }
+
+.noone{
+    text-align: center;
+    color: v.$negro;
+    display: block;
+    margin-inline: auto;
+    font-family: v.$heavy;
+}

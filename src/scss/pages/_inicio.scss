@@ -15,6 +15,7 @@ body{
 
 main{
     height: calc(101vh - 132px);
+    @include m.flex(center, 0);
     .splide{
         img{
             object-fit: cover;
@@ -24,10 +25,46 @@ main{
             position: relative;
         }
     }
-
     .ubication{
         top: 30px;
         right: 30px;
+    }
+    .contenedor{
+        position: absolute;
+        z-index: 2;
+        p{
+            color: v.$blanco;
+            font-family: v.$heavy;
+            font-size: 2rem;
+            text-align: center;
+            margin: 2rem 0 4rem;
+        }
+        a{
+            @include m.boton(58px, 1.4rem);
+            @include m.max_width(370px);
+            margin-inline: auto;
+        }
+    }
+    h1{
+        user-select: none;
+        -webkit-user-drag: none;
+        span{
+            color: v.$blanco;
+            display: block;
+            font-family: v.$ampleBold;
+            @include m.text-shadow;
+            font-size: 5rem;
+            &:last-child{
+                color: v.$verde;
+            }
+
+            &:nth-child(2){
+                margin-left: 50px;
+            }
+            &:nth-child(3){
+                margin-left: 100px;
+            }
+        }
     }
 }
 

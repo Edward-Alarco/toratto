@@ -13,6 +13,7 @@
         top: 50%;
         transform: translateY(-50%);
         left: 10px;
+        @include m.transition;
         color: v.$verde;
         font-size: 20px;
     }
@@ -30,6 +31,7 @@
         border: 1px solid v.$verde;
         border-bottom-left-radius: 20px;
         background: v.$blanco;
+        @include m.transition;
         font-family: v.$medium;
         padding-left: 42px;
         padding-right: 10px;
@@ -44,5 +46,16 @@
         font-family: v.$heavy;
         text-align: center;
         font-size: 1rem;
+        &:hover, &:active{
+            background: v.$azul;
+        }
     }
+    &:has(button:hover){
+        input{
+            border-color: v.$azul;
+        }
+        i{
+            color: v.$azul;
+        }
+    } 
 }

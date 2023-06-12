@@ -22,7 +22,7 @@
         font-family: v.$ampleRegular;
     }
 
-    .contact_box{
+    .dude_box{
         display: block;
         width: 310px;
         border-radius: 20px 20px 20px 0;
@@ -30,6 +30,8 @@
         border: 2px solid rgba($color: v.$blanco, $alpha: 0);
         background: rgba($color: v.$blanco, $alpha: .1);
         @include m.transition;
+        padding: 0;
+        box-shadow: none !important;
         &>div{
             width: 100%;
             &:nth-child(1){

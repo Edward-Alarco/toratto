@@ -2,8 +2,52 @@
 @use "base/variables" as v;
 
 .articulos_blog{
-    padding: 3.5rem 0;
-    .busqueda_avanzada{
-        @include m.grid(2, 10px);
+    padding: 3.5rem 0 5.5rem;
+    .busqueda{
+        &_avanzada{
+            @include m.grid(2, 10px);
+            margin-bottom: 45px;
+        }
+        &_contenido{
+            @include m.grid(2, 36px 16px);
+            .post{
+                margin-inline: auto;
+            }
+        }
+    }
+}
+
+.filtros{
+    @include m.grid(2, 15px);
+    height: 50px;
+    button{
+        height: 100%;
+        padding: 6px;
+        @include m.flex(center, 12px);
+        border: 1px solid v.$verde;
+        background: transparent;
+        @include m.transition;
+        @include m.shadow(0,3px,6px, v.$sombra2);
+        border-radius: 6px;
+        img{
+            @include m.max_width(30px);
+            @include m.transition;
+        }
+        p{
+            font-family: v.$heavy;
+            color: v.$azul;
+            font-size: 1.2rem;
+            @include m.transition;
+        }
+        &:active, &:hover{
+            border-color: v.$azul;
+            background: v.$azul;
+            p{
+                color: v.$blanco;
+            }
+            img{
+                filter: brightness(100);
+            }
+        }
     }
 }

@@ -76,6 +76,7 @@
         <p class="no-one">No hay productos disponibles</p>
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>
+        <?php wp_reset_query(); ?>
     </div>
     <div class="contenedor">
         <a href="<?php echo esc_url(home_url('departamentos-en-venta')) ?>">Ver todos los proyectos</a>

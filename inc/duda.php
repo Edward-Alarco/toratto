@@ -2,11 +2,11 @@
     <div class="contenedor small">
         <div class="row">
             <div class="col">
-                <h2>¿Tienes alguna duda?</h2>
-                <p>No dudes en contactarnos y empieza tu nueva vida</p>
+                <h2><?php echo get_field('titulo_duda', 'option') ?></h2>
+                <p><?php echo get_field('descripcion_duda', 'option') ?></p>
             </div>
             <div class="col">
-                <a class="contact_box" href="<?php echo esc_url(home_url('contactanos')) ?>">
+                <a class="dude_box" href="<?php echo esc_url(home_url('contactanos')) ?>">
                     <div>
                         <svg width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="duda">

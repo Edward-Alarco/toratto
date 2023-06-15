@@ -38,7 +38,7 @@ $id_single = intval(get_the_ID());
                     'post_status' => 'publish'
                 ));
             ?>
-            <aside>
+            <aside class="posts">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
                 <?php if(has_post_thumbnail()): ?>
                 <a class="post small_post" href="<?php the_permalink(); ?>" title="<?php the_title();?>">
@@ -51,7 +51,7 @@ $id_single = intval(get_the_ID());
                     </div>
                     <div class="post_information">
                         <div class="post_head">
-                            <p>Mar-15</p>
+                            <p><?php echo ucfirst(get_the_date('F-d')); ?></p>
                             <h3><?php the_title();?></h3>
                         </div>
                         <span>Ver más</span>

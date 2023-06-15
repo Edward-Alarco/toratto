@@ -1,0 +1,68 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.contacto{
+    padding: 6rem 0 0;
+    .contact_form .fields span{
+        &:nth-child(1), &:nth-child(4){
+            width: 100%;
+        }
+    }
+    .row{
+        @include m.flex(space-between, 0);
+        .col{
+            &:nth-child(1){
+                width: 44%;
+            }
+            &:nth-child(2){
+                width: 53%;
+            }
+            iframe{
+                width: 100%;
+                aspect-ratio: 16/9;
+                border-radius: 20px;
+                overflow: hidden;
+                @include m.shadow(0,3px,6px,v.$sombra);
+            }
+        }
+    }
+    &_info{
+        height: 100%;
+        @include m.flex(center, 0);
+        flex-direction: column;
+        background: v.$gris;
+        border-radius: 20px;
+        padding: 3rem 2.5rem;
+        ul{
+            list-style: none;
+            li{
+                &:not(:last-child){
+                    margin-bottom: 24px;
+                }
+                a{
+                    @include m.flex(flex-start, 16px);
+                    flex-wrap: nowrap;
+                }
+                div{
+                    width: 56px;
+                    height: 56px;
+                    aspect-ratio: 1/1;
+                    @include m.flex(center, 0);
+                    background: v.$blanco;
+                    @include m.shadow(0,3px,6px,v.$sombra);
+                    border-radius: 50%;
+                    i{
+                        color: v.$verde;
+                        font-size: 24px;
+                    }
+                }
+                p{
+                    color: v.$blanco;
+                    font-family: v.$medium;
+                    font-size: 2rem;
+                    @include m.max_width(430px);
+                }
+            }
+        }
+    }
+}

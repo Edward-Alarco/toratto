@@ -1,0 +1,57 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.card_valor{
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    height: 450px;
+    &>div{
+        width: 100%;
+        @include m.transition;
+        height: 100%;
+        @include m.flex(center, 24px);
+    }
+    &_front{
+        flex-direction: column;
+        img{
+            filter: grayscale(100) brightness(100);
+            @include m.contain(140px);
+        }
+    }
+    h2, h3{
+        color: v.$blanco;
+    }
+    h2{
+        font-family: v.$ampleBold;
+    }
+    h3{
+        font-family: v.$black;
+    }
+    &_back{
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        flex-direction: column;
+        padding: 2.25rem;
+        p{
+            text-align: center;
+            color: v.$blanco;
+            font-family: v.$bold;
+            font-size: 1.35rem;
+            line-height: 1.3em;
+            min-height: 210px;
+        }
+    }
+    &_title{
+        @include m.flex(center, 10px);
+    }
+    &:hover{
+        .card_valor_front{
+            opacity: 0;
+        }
+        .card_valor_back{
+            opacity: 1;
+        }
+    }
+}

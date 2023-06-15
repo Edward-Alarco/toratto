@@ -21,3 +21,163 @@
         }
     }
 }
+
+.ecofriendly{
+    min-height: 80vh;
+    padding-block: 3rem;
+    @include m.flex(center, 0);
+    background: white url(../../images/nosotros/eco.jpg) no-repeat;
+    background-position: bottom left;
+    background-size: 100%;
+    .row{
+        @include m.flex(space-between, 30px);
+    }
+    .col{
+        &:last-child{
+            @include m.max_width(450px);
+        }
+        div{
+            width: 100%;
+            background: v.$gris;
+            border-radius: 20px;
+            padding: 2rem;
+            p{
+                font-family: v.$medium;
+                color: v.$blanco;
+                font-size: 1.25rem;
+            }
+        }
+        a{
+            margin-top: 30px;
+            @include m.boton(56px, 1.45rem);
+            @include m.max_width(222px);
+        }
+    }
+    h2{
+        color: v.$verde;
+        text-align: left;
+        font-family: v.$ampleBold;
+        margin-bottom: 3rem;
+        position: relative;
+        width: min-content;
+        @include m.line(8px, v.$gris);
+    }
+}
+
+.mvision{
+    padding-block: 5rem;
+    .row{
+        @include m.flex(space-between, 0);
+        .col{
+            width: 47.5%;
+        }
+    }
+}
+
+.contenido_texto{
+    .row{
+        @include m.flex(space-between, 0);
+        .col{
+            position: relative;
+            img{
+                width: 100%;
+            }
+            .contenido div{
+                background: v.$gris;
+                border-radius: 20px;
+                padding: 2rem;
+            }
+        }
+        p{
+            color: v.$blanco;
+            font-family: v.$medium;
+            font-size: 1.3rem;
+            line-height: 1.4em;
+        }
+        h2{
+            color: v.$verde;
+            text-align: left;
+            font-family: v.$ampleBold;
+            margin-bottom: 3rem;
+            position: relative;
+            @include m.line(8px, v.$gris);
+        }
+        .contenido{
+            @include m.max_width(530px);
+        }
+    }    
+}
+
+.contenido_1{
+    padding: 6rem 0 4.5rem;
+    .row{
+        .col{
+            &:nth-child(1){
+                width: 55%;
+                img{
+                    border-radius: 0 20px 20px 0;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    background: v.$gris3;
+                    width: calc(100% + 10px);
+                    height: 100%;
+                    border-radius: 0 20px 20px 0;
+                    top: -10px;
+                    left: 0;
+                    z-index: -1;
+                }
+            }
+            &:nth-child(2){
+                width: 45%;
+                div{
+                    width: 100%;
+                }
+            }
+        }
+        h2{
+            @include m.max_width(380px);
+        }
+        .contenido{
+            margin: 0 0 0 auto;
+        }
+    }
+}
+
+.contenido_2{
+    padding: 4.5rem 0 6.5rem;
+    .row{
+        .col{
+            &:nth-child(1){
+                width: 45%;
+                div{
+                    width: 100%;
+                }
+            }
+            &:nth-child(2){
+                width: 55%;
+                img{
+                    border-radius: 20px 0 0 20px;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    background: v.$gris3;
+                    width: calc(100% + 10px);
+                    height: 100%;
+                    border-radius: 20px 0 0 20px;
+                    top: -10px;
+                    right: 0;
+                    z-index: -1;
+                }
+            }
+        }
+        h2{
+            @include m.max_width(460px);
+        }
+        .contenido{
+            margin: 0;
+        }
+    }
+}

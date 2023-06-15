@@ -15,7 +15,29 @@ $wp_query = new WP_Query(array(
 ));
 ?>
 
-<section class="listado_departamentos">
+<section class="listado_departamentos articulos_blog">
+    <div class="contenedor">
+        <div class="busqueda_avanzada w-100">
+            <div class="filtros w-100" id="filtros">
+                <button class="filtro-nombres w-100">
+                    <img src="<?php echo IMG; ?>/blog/filtro1.svg">
+                    <p>Filtrar por distrito o ciudad</p>
+                </button>
+                <button class="filtro-vistos w-100">
+                    <img src="<?php echo IMG; ?>/blog/filtro2.svg">
+                    <p>Filtrar por proyecto</p>
+                </button>
+            </div>
+            <div class="buscador w-100">
+                <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
+                    <i class="fas fa-search"></i>
+                    <input type="search" class="search-field" placeholder="Buscar" value="<?php echo get_search_query() ?>" name="s" />
+                    <button type="submit" class="search-submit">Buscar</button>
+                </form>
+                <?php //get_search_form(); ?>
+            </div>
+        </div>
+    </div>
     <div class="contenedor">
         <div class="contenedor_depas">
             <?php if (have_posts()) : ?>

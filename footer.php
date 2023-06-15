@@ -26,8 +26,8 @@
             </div>
             <div class="col">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Compra de terrenos</a></li>
+                    <li><a href="#" title="Inicio">Inicio</a></li>
+                    <li><a href="#" title="Compra de terrenos">Compra de terrenos</a></li>
                     <li><a href="#">Próximos proyectos</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Post Venta</a></li>

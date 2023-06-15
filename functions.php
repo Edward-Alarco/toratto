@@ -24,10 +24,12 @@ if(!function_exists ('general_scripts')):
         wp_enqueue_style('maincss');
         wp_enqueue_style('splidecss');
             
+        wp_register_script('filtrojs', get_template_directory_uri().'/libraries/js/filtrado.js',array('jquery'),'1.0.0',true);
         wp_register_script('splidejs', get_template_directory_uri().'/libraries/js/splide.min.js',array(),'1.0.0',true);
         wp_register_script('splideautoscrolljs', get_template_directory_uri().'/libraries/js/splide-extension-auto-scroll.min.js',array(),'1.0.0',true);
         wp_register_script('mainjs', get_template_directory_uri().'/public/js/main.min.js',array(),'1.0.0',true);
 
+        wp_enqueue_script('filtrojs');
         wp_enqueue_script('splidejs');
         wp_enqueue_script('splideautoscrolljs');
         wp_enqueue_script('mainjs');
@@ -52,6 +54,45 @@ function register_my_menus() {
     );
 }
 add_action( 'init', 'register_my_menus' );
+
+// visualizaciones de mis entradas
+function registrar_vista_entrada() {
+    if (is_singular('post')) {
+        global $post;
+        $views = get_post_meta($post->ID, 'vistas', true);
+        $views = $views ? $views + 1 : 1;
+        update_post_meta($post->ID, 'vistas', $views);
+    }
+}
+add_action('wp', 'registrar_vista_entrada');
+
+
+
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'menu_title'  => 'Secciones Repetidas',
+        'menu_slug'   => 'theme-general-settings',
+        'icon_url'    => 'dashicons-table-row-before',
+        'redirect'    => false
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'  => 'Nuestras Estadisticas',
+        'menu_title'  => 'Nuestras Estadisticas',
+        'parent_slug' => 'theme-general-settings'
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'  => 'Descuentos de Temporada',
+        'menu_title'  => 'Descuentos de Temporada',
+        'parent_slug' => 'theme-general-settings'
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'  => 'Sección ¿Alguna duda?',
+        'menu_title'  => 'Sección ¿Alguna duda?',
+        'parent_slug' => 'theme-general-settings'
+    ));
+}
+
+
 
 require_once get_template_directory().'/inc/functions/opciones.php';
 require_once get_template_directory().'/inc/functions/departamentos.php';

@@ -6,7 +6,16 @@
 get_header();
 ?>
 
-<main>
+<main class="p-relative">
+    <div class="contenedor">
+        <h1>
+            <span>Hacemos que</span>
+            <span>tu hogar soñado</span>
+            <span>sea una realidad</span>
+        </h1>
+        <p>Tu nueva vida, empieza hoy</p>
+        <a href="#">Conoce tu nuevo depa</a>
+    </div>
     <div class="splide wh-100" id="splideHero">
         <div class="splide__track wh-100">
             <ul class="splide__list wh-100">
@@ -64,7 +73,7 @@ get_header();
                 </div>
                 <div class="post_information">
                     <div class="post_head">
-                        <p>Mar-15</p>
+                        <p><?php echo ucfirst(get_the_date('F-d')); ?></p>
                         <h3><?php the_title();?></h3>
                     </div>
                     <span>Ver más</span>
@@ -74,7 +83,7 @@ get_header();
             <?php endwhile;endif; ?>
             <?php wp_reset_postdata(); ?>
         </div>
-        <a href="#">Ver todos los proyectos</a>
+        <a href="<?php echo esc_url(home_url('blog')) ?>">Ver todos los proyectos</a>
     </div>
 </section>
 

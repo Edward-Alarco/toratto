@@ -1,9 +1,10 @@
 <?php
 /*
-    Template name: blog
+    Template name: search
 */
 
 get_header();
+    
 ?>
 
 <section class="banner_inline blog">
@@ -11,15 +12,6 @@ get_header();
         <h1>Descubre las últimas noticias <b>en el mundo <span>inmobiliario</span></b></h1>
     </div>
 </section>
-
-<?php 
-    global $wp_query;
-    $wp_query = new WP_Query( array(
-        'post_type' => 'post', 
-        'posts_per_page' => 500,
-        'post_status' => 'publish'
-    ));
-?>
 
 <section class="articulos_blog">
     <div class="contenedor">
@@ -44,12 +36,23 @@ get_header();
             </div>
         </div>
     </div>
+
+    <?php 
+        $s = get_search_query();
+        $args = array(
+            's' => $s,
+            'post_type' => 'post',
+            'post_status' => 'publish'
+        );
+        
+        $the_query = new WP_Query($args);
+    ?>
+
     <div class="contenedor small">
         <div class="busqueda_contenido">
-            <?php if (have_posts()) : while (have_posts()) : the_post();?>
+            <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post();?>
             <?php if(has_post_thumbnail()): ?>
-            <?php $vistas = get_post_meta(get_the_ID(), 'vistas', true); ?>
-            <a class="post" href="<?php the_permalink(); ?>" title="<?php the_title();?>" data-nombre="<?php echo get_the_title();?>" data-vistas="<?php echo $vistas; ?>">
+            <a class="post" href="<?php the_permalink(); ?>" title="<?php the_title();?>" data-nombre="<?php echo get_the_title();?>">
                 <div class="post_image">
                     <?php
                         $thumbID = get_post_thumbnail_id( $post->ID );
@@ -66,7 +69,9 @@ get_header();
                 </div>
             </a>
             <?php endif; ?>
-            <?php endwhile;endif; ?>
+            <?php endwhile;else: ?>
+            <p class="noone">No hay resultados encontrados</p>
+            <?php endif; ?>
             <?php wp_reset_postdata(); ?>
         </div>
     </div>

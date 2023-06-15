@@ -4,10 +4,9 @@
 .desc_temporada{
     min-height: 87vh;
     padding-block: 3rem;
-    background: url(../../images/desc_temporada/bg_descuentos.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: bottom !important;
     @include m.flex(center, 0);
     flex-direction: column;
     position: relative;
@@ -37,7 +36,7 @@
         }
         a{
             @include m.boton(68px, 1.6rem);
-            @include m.max_width(350px);
+            @include m.max_width(430px);
         }
         ul{
             margin-top: 10px;

@@ -68,8 +68,15 @@
     padding-block: 5rem;
     .row{
         @include m.flex(space-between, 0);
+        @include m.desktop{
+            flex-direction: column;
+            gap: 2rem;
+        }
         .col{
             width: 47.5%;
+            @include m.desktop{
+                width: 100%;
+            }
         }
     }
 }

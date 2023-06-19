@@ -20,7 +20,7 @@
             breakpoints: {
                 768: {
                     perPage: 1,
-                    arrows: true,
+                    arrows: false,
                     gap: '2.8rem',
                 },
             }

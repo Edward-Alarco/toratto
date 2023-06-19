@@ -6,6 +6,9 @@
     .contenedor{
         &_depas{
             @include m.grid(2, 50px 40px);
+            @include m.desktop{
+                @include m.grid(1, 50px 40px);
+            }
         }
     }
 }

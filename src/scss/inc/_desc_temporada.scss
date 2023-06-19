@@ -10,6 +10,9 @@
     @include m.flex(center, 0);
     flex-direction: column;
     position: relative;
+    @include m.tablet {
+        gap: 2rem;
+    }
     .contenedor{
         &::before{
             content: '';
@@ -67,8 +70,9 @@
         bottom: 75px;
         right: 10%;
         @include m.tablet {
-            right: 1rem;
-            bottom: 1rem;
+            position: relative;
+            top: 0;
+            bottom: 0;
         }
         .place{
             background: v.$verde;

@@ -16,6 +16,9 @@ footer{
     }
     .row{
         @include m.flex(space-between, 20px);
+        @include m.desktop{
+            gap: 2rem;
+        }
     }
     p{
         color: v.$blanco;
@@ -48,6 +51,12 @@ footer{
     }
     .col{
         width: calc(33% - 20px);
+        @include m.desktop{
+            width: calc(50% - 1rem);
+        }
+        @include m.telefono{
+            width: 100%;
+        }
         position: relative;
         &:nth-child(1){
             ul{

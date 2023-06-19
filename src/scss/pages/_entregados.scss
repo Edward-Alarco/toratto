@@ -5,6 +5,9 @@
     padding: 4rem 0 7.5rem;
     .contenedor{
         @include m.grid(2, 30px);
+        @include m.tablet{
+            @include m.grid(1, 30px);
+        }
     }
 }
 

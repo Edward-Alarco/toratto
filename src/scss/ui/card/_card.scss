@@ -101,6 +101,9 @@
             color: v.$azul;
             text-align: center;
             font-size: 2.65rem;
+            // @include m.desktop{
+            //     font-size: 2rem;
+            // }
             font-family: v.$black;
         }
     }

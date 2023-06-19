@@ -14,10 +14,16 @@
         new Splide('#splideDepartamentos', {
             type: 'loop',
             perPage: 2,
-            perMove: 1,
-            arrows: true,
             gap: '2.8rem',
-            pagination: false
+            pagination: false,
+            perMove: 1,
+            breakpoints: {
+                768: {
+                    perPage: 1,
+                    arrows: true,
+                    gap: '2.8rem',
+                },
+            }
         }).mount();
     }
 

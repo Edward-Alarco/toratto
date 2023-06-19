@@ -54,6 +54,9 @@ main{
             font-family: v.$ampleBold;
             @include m.text-shadow;
             font-size: 5rem;
+            @include m.desktop{
+                font-size: 2rem;
+            }
             &:last-child{
                 color: v.$verde;
             }
@@ -103,6 +106,9 @@ main{
             p{
                 font-family: v.$ampleBold;
                 font-size: 2.9rem;
+                @include m.desktop{
+                    font-size: 1.4rem;
+                }
             }
         }
         &.place-2{

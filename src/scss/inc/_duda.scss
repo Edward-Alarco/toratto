@@ -7,6 +7,10 @@
     background-position: center;
     min-height: 280px;
     @include m.flex(center, 0);
+    @include m.desktop{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
     .row{
         @include m.flex(space-between, 30px);
     }

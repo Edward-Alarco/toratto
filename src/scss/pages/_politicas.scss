@@ -46,6 +46,9 @@
         }
         &_content{
             padding: 3rem;
+            @include m.desktop{
+                padding: 2rem;
+            }
             display: none;
             @include m.transition;
             background: v.$gris;

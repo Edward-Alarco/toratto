@@ -74,6 +74,9 @@ footer{
             padding-top: 16px;
             ul{
                 margin-inline: auto;
+                @include m.desktop{
+                    margin-inline: initial;
+                }
                 li:not(:last-child){
                     margin-bottom: 17px;
                 }

@@ -23,10 +23,10 @@
 
 .filtros{
     @include m.grid(2, 15px);
-    height: 50px;
-    @include m.desktop{
-        height: auto;
+    // height: 50px;
+    @include m.desktop {
         gap: 20px;
+        // height: auto;
     }
     button{
         height: 100%;
@@ -37,6 +37,9 @@
         @include m.transition;
         @include m.shadow(0,3px,6px, v.$sombra2);
         border-radius: 6px;
+        @include m.tablet{
+            flex-direction: column;
+        }
         img{
             @include m.max_width(30px);
             @include m.transition;

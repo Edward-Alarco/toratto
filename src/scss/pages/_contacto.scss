@@ -10,12 +10,22 @@
     }
     .row{
         @include m.flex(space-between, 0);
+        @include m.desktop{
+            flex-direction: column;
+            gap: 2rem;
+        }
         .col{
             &:nth-child(1){
                 width: 44%;
+                @include m.desktop{
+                    width: 100%;
+                }
             }
             &:nth-child(2){
                 width: 53%;
+                @include m.desktop{
+                    width: 100%;
+                }
             }
             iframe{
                 width: 100%;
@@ -61,6 +71,12 @@
                     font-family: v.$medium;
                     font-size: 2rem;
                     @include m.max_width(430px);
+                    @include m.desktoplg{
+                        font-size: 1.5rem;
+                    }
+                    @include m.desktoplg{
+                        font-size: 1.3rem;
+                    }
                 }
             }
         }

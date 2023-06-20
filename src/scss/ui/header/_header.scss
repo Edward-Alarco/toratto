@@ -5,12 +5,12 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 1000;
     background: v.$blanco;
     @include m.shadow(0,3px,6px,v.$sombra);
     height: 132px;
     @include m.desktop{
-        height: auto;
+        height: 100px;
     }
     nav{
         width: 100%;
@@ -32,8 +32,8 @@ header{
     .logo{
         width: 100%;
         max-width: 275px;
-        @include m.desktoplg{
-            max-width: 200px;
+        @include m.desktop{
+            max-width: 150px;
         }
     }
     &>.contenedor{
@@ -46,6 +46,9 @@ header{
     ul{
         list-style: none;
         @include m.flex(center, 36px);
+        @media (max-width: 1300px){
+            display: none;
+        }
         a{
             font-size: 1.25rem;
             margin: 0;
@@ -92,7 +95,7 @@ header{
     }
 }
 
-#burger{
+.burger{
     background: none;
     border: none;
     padding: 6px;
@@ -141,10 +144,14 @@ aside:not(.posts){
     right: -480px;
     background: rgba($color: v.$azul, $alpha: .95);
     height: 100vh;
-    z-index: 12;
+    z-index: 1000;
     @include m.flex(center, 20vh);
     @include m.transition;
     flex-direction: column;
+    @include m.desktop{
+        right: -100%;
+        max-width: 100%;
+    }
     &.active{
         right: 0;
     }
@@ -162,13 +169,26 @@ aside:not(.posts){
     }
     .ul_menu{
         li{
+            display: none;
+            &:nth-child(-n+5){
+                display: block;
+            }
+            @media (max-width: 1300px){
+                display: block;
+            }
             &:not(:last-child){
                 margin-bottom: 18px;
+                @media (max-width:1300px){
+                    margin-bottom: 10px;
+                }
             }
             a{
                 font-size: 1.35rem;
                 padding-bottom: 2px;
                 border-bottom: 1px solid transparent;
+                @include m.desktop{
+                    font-size: 1.1rem;
+                }
                 &:hover{
                     color: v.$verde;
                     border-color: v.$verde;

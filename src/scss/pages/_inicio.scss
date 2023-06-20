@@ -15,6 +15,10 @@ body{
 
 main{
     height: calc(101vh - 132px);
+    @include m.desktop{
+        margin-top: -50px;
+        height: calc(101vh - 100px)
+    }
     @include m.flex(center, 0);
     .splide{
         img{
@@ -233,6 +237,10 @@ main{
             li{
                 a{
                     @include m.contain(66px);
+                    @include m.desktop{
+                        width: 60px;
+                        height: 60px;
+                    }
                     background: v.$verde;
                     display: grid;
                     border-radius: 50%;
@@ -240,6 +248,9 @@ main{
                     i{
                         color: v.$blanco;
                         font-size: 29px;
+                        @include m.desktop{
+                            font-size: 23px;
+                        }
                     }
                 }
             }

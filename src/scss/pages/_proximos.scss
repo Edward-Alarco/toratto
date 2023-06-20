@@ -15,8 +15,14 @@
 
     .row{
         @include m.flex(space-between, 30px 0);
+        @include m.desktop{
+            flex-direction: column;
+        }
         .col{
             width: 48%;
+            @include m.desktop{
+                width: 100%;
+            }
         }
     }
 

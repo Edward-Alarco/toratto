@@ -74,8 +74,9 @@
                     @include m.desktoplg{
                         font-size: 1.5rem;
                     }
-                    @include m.desktoplg{
+                    @include m.desktop{
                         font-size: 1.3rem;
+                        word-break: break-all;
                     }
                 }
             }

@@ -28,6 +28,9 @@ main{
     .ubication{
         top: 30px;
         right: 30px;
+        @include m.telefono{
+            right: 10px;
+        }
     }
     .contenedor{
         position: absolute;
@@ -63,9 +66,15 @@ main{
 
             &:nth-child(2){
                 margin-left: 50px;
+                @include m.desktop{
+                    margin-left: 5px;
+                }
             }
             &:nth-child(3){
                 margin-left: 100px;
+                @include m.desktop{
+                    margin-left: 10px;
+                }
             }
         }
     }

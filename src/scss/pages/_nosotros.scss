@@ -13,11 +13,17 @@
             display: block;
             width: 100%;
             margin: 0 auto 10px;
+            @include m.desktop{
+                width: 50%;
+            }
         }
         h3{
             color: v.$blanco;
             text-align: center;
             font-family: v.$black;
+            @include m.desktop{
+                font-size: 1.3em;
+            }
         }
     }
 }
@@ -84,6 +90,10 @@
 .contenido_texto{
     .row{
         @include m.flex(space-between, 0);
+        @include m.desktop{
+            flex-direction: column;
+            gap: 3rem;
+        }
         .col{
             position: relative;
             img{
@@ -117,10 +127,19 @@
 
 .contenido_1{
     padding: 6rem 0 4.5rem;
+    @include m.desktop{
+        .contenedor {
+            width: min(88%, 1500px);
+            margin: auto !important;
+        }
+    }
     .row{
         .col{
             &:nth-child(1){
                 width: 55%;
+                @include m.desktop{
+                    width: 100%;
+                }
                 img{
                     border-radius: 0 20px 20px 0;
                 }
@@ -138,6 +157,9 @@
             }
             &:nth-child(2){
                 width: 45%;
+                @include m.desktop{
+                    width: 100%;
+                }
                 div{
                     width: 100%;
                 }
@@ -154,9 +176,18 @@
 
 .contenido_2{
     padding: 4.5rem 0 6.5rem;
+    @include m.desktop{
+        .contenedor {
+            width: min(88%, 1500px);
+            margin: auto !important;
+        }
+    }
     .row{
         .col{
             &:nth-child(1){
+                @include m.desktop{
+                    width: 100%;
+                }
                 width: 45%;
                 div{
                     width: 100%;
@@ -164,6 +195,9 @@
             }
             &:nth-child(2){
                 width: 55%;
+                @include m.desktop{
+                    width: 100%;
+                }
                 img{
                     border-radius: 20px 0 0 20px;
                 }

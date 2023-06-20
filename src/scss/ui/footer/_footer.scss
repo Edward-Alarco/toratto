@@ -147,6 +147,7 @@ footer{
     position: fixed;
     right: 0;
     bottom: 30px;
+    z-index: 100;
     a{
         @include m.flex(flex-start, 0);
         border-radius: 75px 0 0 75px;
@@ -174,6 +175,18 @@ footer{
             height: auto !important;
         }
         &:not(.wsp){
+            @include m.desktop{
+                background: v.$azul;
+                div{
+                    i, ion-icon{
+                        color: v.$verde;
+                        fill: v.$verde;
+                    }
+                    &:nth-child(2){
+                        opacity: 1;
+                    }
+                }
+            }
             div{
                 i, ion-icon{
                     font-size: 24px;
@@ -197,6 +210,9 @@ footer{
                     @include m.transition;
                     align-items: center;
                     opacity: 0;
+                    @include m.desktop{
+                        opacity: 1;
+                    }
                     p{
                         color: v.$blanco;
                         font-family: v.$ampleBold;

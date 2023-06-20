@@ -24,6 +24,11 @@
     }
     .col{
         @include m.flex(center, 0);
+        @include m.desktop{
+            &:nth-child(2){
+                display: none;
+            }
+        }
         flex-direction: column;
         img:not(.arrow){
             display: block;

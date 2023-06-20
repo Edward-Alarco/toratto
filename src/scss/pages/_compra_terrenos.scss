@@ -2,13 +2,25 @@
 @use "base/variables" as v;
 
 .compra_terrenos{
+    @include m.desktop{
+        .contenedor.side.right {
+            width: min(88%, 1500px);
+            margin: auto;
+        }
+    }
     padding: 4rem 0 2rem;
     .row{
         @include m.flex(space-between, 30px 0);
+        @include m.desktop{
+            flex-direction: column;
+        }
         .col{
             &:nth-child(1){
                 width: 44%;
                 max-width: 450px;
+                @include m.desktop{
+                    width: 100%;
+                }
                 div{
                     background: v.$gris;
                     padding: 1.75rem;
@@ -23,6 +35,9 @@
             }
             &:nth-child(2){
                 width: 55%;
+                @include m.desktop{
+                    width: 100%;
+                }
             }
         }
         img{

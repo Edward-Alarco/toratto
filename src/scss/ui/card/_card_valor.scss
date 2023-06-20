@@ -6,14 +6,22 @@
     position: relative;
     border-radius: 20px;
     height: 450px;
+    cursor: pointer;
     &>div{
         width: 100%;
         @include m.transition;
         height: 100%;
         @include m.flex(center, 24px);
+        @include m.desktop{
+           flex-direction: column;
+           flex-wrap: nowrap;
+        }
     }
     &_front{
         flex-direction: column;
+        @include m.desktop{
+            opacity: 0;
+        }
         img{
             filter: grayscale(100) brightness(100);
             @include m.contain(140px);
@@ -34,6 +42,9 @@
         opacity: 0;
         flex-direction: column;
         padding: 2.25rem;
+        @include m.desktop{
+            opacity: 1;
+        }
         p{
             text-align: center;
             color: v.$blanco;
@@ -41,6 +52,9 @@
             font-size: 1.35rem;
             line-height: 1.3em;
             min-height: 210px;
+            @include m.desktop{
+                min-height: initial;
+            }
         }
     }
     &_title{
@@ -49,9 +63,15 @@
     &:hover{
         .card_valor_front{
             opacity: 0;
+            @include m.desktop{
+                opacity: 0;
+            }
         }
         .card_valor_back{
             opacity: 1;
+            @include m.desktop{
+                opacity: 1;
+            }
         }
     }
 }

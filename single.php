@@ -11,7 +11,7 @@ $id_single = intval(get_the_ID());
 <section class="single_banner" style="background: url(<?php echo get_field('fondo_banner')['url']; ?>)">
     <div class="contenedor">
         <h1><?php the_title();?></h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+        <p><?php the_excerpt(); ?></p>
         <a href="<?php echo esc_url(home_url('blog')) ?>" class="back">
             <ion-icon name="arrow-back-circle-outline"></ion-icon>
             <p>Volver al blog</p>

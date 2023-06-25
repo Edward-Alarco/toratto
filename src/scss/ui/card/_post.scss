@@ -10,6 +10,12 @@
     @include m.television{
         max-width: 31%;
     }
+    @include m.tabletlg{
+        max-width: 48%;
+    }
+    @media (max-width: 600px){
+        max-width: 100%;
+    }
     &>div, img{
         width: 100%;
     }

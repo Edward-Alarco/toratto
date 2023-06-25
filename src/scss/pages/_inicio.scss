@@ -223,6 +223,10 @@ main{
             @include m.max_width(400px);
             margin-top: 70px;
             margin-inline: auto;
+            @include m.television{
+                @include m.boton(52px, 1.15rem);
+                @include m.max_width(350px);
+            }
         }
     }
 }

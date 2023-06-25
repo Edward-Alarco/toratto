@@ -16,12 +16,21 @@
             font-family: v.$ampleBold;
             font-size: 3.25rem;
             margin: 0;
+            @include m.television{
+                font-size: 2.8rem;
+            }
+            @include m.desktop{
+                font-size: 2.1rem;
+            }
         }
         p{
             font-family: v.$bold;
             @include m.max_width(620px);
             line-height: 1.4em;
             margin: 1.75rem 0 2rem;
+            @include m.television{
+                margin: 1rem 0 1.5rem;
+            }
         }
     }
     &_body{
@@ -34,13 +43,32 @@
         aside{
             @include m.max_width(300px);
             a{
+                width: 100% !important;
+                max-width: 100% !important;
                 &:not(:last-child){
                     margin-bottom: 2rem;
+                }
+            }
+            @include m.desktoplg{
+                max-width: 100%;
+                @include m.flex(space-between, 0);
+                a{
+                    max-width: 30% !important;
+                }
+            }
+            @include m.tabletlg{
+                max-width: 300px;
+                margin: 0 auto;
+                a{
+                    max-width: 100% !important;
                 }
             }
         }
         .col-8{
             @include m.max_width(calc(100% - 375px));
+            @include m.desktoplg{
+                max-width: 100%;
+            }
         }
         .contenido{
             @include m.shadow(0,3px,6px,v.$sombra);
@@ -83,7 +111,11 @@
                 @include m.max_width(200px);
                 @include m.shadow(0,3px,6px,v.$sombra);
                 margin-inline: auto;
-                border-radius: 0 20px 0 20px;
+                border-radius: 0 20px 0 20px !important;
+                @include m.television{
+                    @include m.boton(56px, 1.15rem);
+                    @include m.max_width(190px);
+                }
             }
         }
         .hr{
@@ -96,6 +128,7 @@
 
 a.back{
     @include m.flex(flex-start, 10px);
+    flex-wrap: nowrap;
     margin: 0;
     ion-icon{
         width: 30px;

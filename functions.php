@@ -42,7 +42,7 @@ if ( function_exists( 'add_theme_support' ) )
 add_theme_support( 'post-thumbnails' );
 
 //excerpt 30 word
-function my_excerpt_length($length){return 30;}
+function my_excerpt_length($length){return 22;}
 add_filter('excerpt_length', 'my_excerpt_length');
 
 function register_my_menus() {

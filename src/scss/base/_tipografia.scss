@@ -10,6 +10,12 @@ h1{
     @include m.television{
         font-size: 3em;
     }
+    @include m.desktop{
+        font-size: 2.6em;
+    }
+    @include m.tablet{
+        font-size: 2.3em;
+    }
 }
 h2{
     font-size: 2.85em;
@@ -18,16 +24,34 @@ h2{
     @include m.television{
         font-size: 2.4em;
     }
+    @include m.desktop{
+        font-size: 2.1em;
+    }
+    @include m.tablet{
+        font-size: 1.9em;
+    }
     &.up{
         font-size: 3em;
         @include m.television{
             font-size: 2.75em;
+        }
+        @include m.desktop{
+            font-size: 2.2em;
+        }
+        @include m.tablet{
+            font-size: 2em;
         }
     }
     &.down{
         font-size: 2.2em;
         @include m.television{
             font-size: 2em;
+        }
+        @include m.desktop{
+            font-size: 1.8em;
+        }
+        @include m.tablet{
+            font-size: 1.7em;
         }
     }
 }
@@ -37,10 +61,19 @@ h3{
     @include m.television{
         font-size: 1.4em;
     }
+    @include m.desktop{
+        font-size: 1.3em;
+    }
+    @include m.tablet{
+        font-size: 1.2em;
+    }
 }
 p{
     font-size: 1.1rem;
     @include m.television{
         font-size: 1rem;
+    }
+    @include m.tablet{
+        font-size: 0.925rem;
     }
 }

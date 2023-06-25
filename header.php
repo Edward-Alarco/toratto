@@ -23,7 +23,7 @@
         <div class="contenedor">
             <a class="tel" href="#">
                 <img src="<?php echo IMG; ?>/inicio/tel.png">
-                <p>(01) 284 - 3979</p>
+                <p><?php echo get_option('nro_1'); ?></p>
             </a>
         </div>
     </nav>

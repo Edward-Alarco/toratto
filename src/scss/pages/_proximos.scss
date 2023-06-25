@@ -1,0 +1,47 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.nuevo_paso{
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    min-height: 111vh;
+    padding-block: 3rem;
+    @include m.flex(center, 0);
+    flex-direction: column;
+
+    background: url(../../images/proximos/banner_contacto.jpg) no-repeat;
+    background-size: cover;
+    background-position: top;
+
+    .row{
+        @include m.flex(space-between, 30px 0);
+        @include m.desktop{
+            flex-direction: column;
+        }
+        .col{
+            width: 48%;
+            @include m.desktop{
+                width: 100%;
+            }
+        }
+    }
+
+    h2{
+        color: v.$azul;
+        text-align: left;
+        margin-bottom: 1.65rem;
+        position: relative;
+        width: fit-content;
+        font-family: v.$ampleRegular;
+        font-weight: 100;
+        @include m.text-shadow;
+        font-size: 3.25rem;
+        @include m.line(8px, v.$verde);
+        b, strong{
+            display: block;
+            font-family: v.$ampleBold;
+            font-weight: bold;
+        }
+    }
+
+}

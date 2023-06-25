@@ -1,0 +1,87 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.card_valor{
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    height: 450px;
+    cursor: pointer;
+    @include m.television{
+        height: 400px;
+    }
+    &>div{
+        width: 100%;
+        @include m.transition;
+        height: 100%;
+        @include m.flex(center, 24px);
+        @include m.desktop{
+           flex-direction: column;
+           flex-wrap: nowrap;
+        }
+    }
+    &_front{
+        flex-direction: column;
+        @include m.desktop{
+            opacity: 0;
+        }
+        img{
+            filter: grayscale(100) brightness(100);
+            @include m.contain(140px);
+            @include m.television{
+                @include m.contain(100px);
+            }
+        }
+    }
+    h2, h3{
+        color: v.$blanco;
+    }
+    h2{
+        font-family: v.$ampleBold;
+    }
+    h3{
+        font-family: v.$black;
+    }
+    &_back{
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        flex-direction: column;
+        padding: 2.25rem;
+        @include m.desktop{
+            opacity: 1;
+        }
+        p{
+            text-align: center;
+            color: v.$blanco;
+            font-family: v.$bold;
+            font-size: 1.35rem;
+            line-height: 1.3em;
+            min-height: 210px;
+            @include m.television{
+                font-size: 1.175rem;
+                min-height: 150px;
+            }
+            @include m.desktop{
+                min-height: initial;
+            }
+        }
+    }
+    &_title{
+        @include m.flex(center, 10px);
+    }
+    &:hover{
+        .card_valor_front{
+            opacity: 0;
+            @include m.desktop{
+                opacity: 0;
+            }
+        }
+        .card_valor_back{
+            opacity: 1;
+            @include m.desktop{
+                opacity: 1;
+            }
+        }
+    }
+}

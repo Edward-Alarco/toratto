@@ -1,0 +1,285 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+body{
+    &.page-template-departamentos-en-venta,
+    &.page-template-blog,
+    &.single-departamento,
+    &.page-template-proximos-proyectos,
+    &.page-template-proyectos-entregados,
+    &.page-template-front-page{
+        background: url(../../images/inicio/fondo_inicio.png) no-repeat fixed center;
+        background-size: cover;
+    }
+}
+
+main{
+    height: calc(101vh - 132px);
+    @include m.television{
+        height: calc(101vh - 120px);
+    }
+    @include m.desktop{
+        margin-top: -50px;
+        height: calc(101vh - 100px)
+    }
+    @include m.flex(center, 0);
+    .splide{
+        img{
+            object-fit: cover;
+            object-position: bottom;
+        }
+        &__slide{
+            position: relative;
+        }
+    }
+    .ubication{
+        top: 30px;
+        right: 30px;
+        @include m.telefono{
+            right: 10px;
+        }
+    }
+    .contenedor{
+        position: absolute;
+        z-index: 2;
+        p{
+            color: v.$blanco;
+            font-family: v.$heavy;
+            font-size: 2rem;
+            text-align: center;
+            margin: 2rem 0 4rem;
+        }
+        a{
+            @include m.boton(58px, 1.4rem);
+            @include m.max_width(370px);
+            margin-inline: auto;
+        }
+    }
+    h1{
+        user-select: none;
+        -webkit-user-drag: none;
+        span{
+            color: v.$blanco;
+            display: block;
+            font-family: v.$ampleBold;
+            @include m.text-shadow;
+            font-size: 5rem;
+            @include m.television{
+                font-size: 4rem;
+            }
+            @include m.desktop{
+                font-size: 2rem;
+            }
+            &:last-child{
+                color: v.$verde;
+            }
+
+            &:nth-child(2){
+                margin-left: 50px;
+                @include m.desktop{
+                    margin-left: 5px;
+                }
+            }
+            &:nth-child(3){
+                margin-left: 100px;
+                @include m.desktop{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+.ubication{
+    @include m.flex(center, 0);
+    flex-direction: column;
+    align-items: flex-end;
+    div{
+        border-radius: 0 20px 0 20px;
+        width: fit-content;
+        p{
+            font-family: v.$heavy;
+            color: v.$blanco;
+        }
+        &.info{
+            border-radius: 20px 0 20px 0;
+            background: v.$verde;
+            padding: 12px 16px;
+            p{
+                font-size: 1.5rem;
+                @include m.television{
+                    font-size: 1.35rem;
+                }
+            }
+        }
+        &.logo{
+            background: v.$blanco;
+            border-radius: 20px 0 20px 0;
+            @include m.max_width(250px);
+            padding-block: 5px;
+            img{
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &.place{
+            background: rgba($color: v.$azul, $alpha: 0.71);
+            padding: 7px 14px;
+            p{
+                font-family: v.$ampleBold;
+                font-size: 2.9rem;
+                @include m.television{
+                    font-size: 2.3rem;
+                }
+                @include m.desktop{
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        &.place-2{
+            background: v.$blanco;
+            padding: 5px 14px;
+            p{
+                font-size: 1.95rem;
+                color: v.$azul;
+                @include m.television{
+                    font-size: 1.65rem;
+                }
+            }
+        }
+    }
+}
+
+.en_venta{
+    padding: 5rem 0;
+    h2{
+        color: v.$verde;
+        text-align: center;
+        font-family: v.$ampleBold;
+        margin-bottom: 3rem;
+        position: relative;
+        width: fit-content;
+        margin-inline: auto;
+        @include m.line(8px, v.$gris);
+    }
+    .contenedor{
+        &:first-child{
+            margin-bottom: 4rem;
+        }
+        &>p{
+            color: v.$azul;
+            font-size: 1.9rem;
+            font-family: v.$heavy;
+            text-align: center;
+            @include m.television{
+                font-size: 1.45rem;
+            }
+        }
+        &>a{
+            @include m.boton(50px, 1.35rem);
+            @include m.max_width(340px);
+            margin: 50px auto 0;
+        }
+    }
+    .splide__slide{
+        padding: 10px;
+    }
+    .splide__arrow{
+        &--prev{
+            left: -3em;
+        }
+        &--next{
+            right: -3em;
+        }
+        svg{
+            fill: rgba($color: v.$verde, $alpha: 0.5);
+            color: rgba($color: v.$verde, $alpha: 0.5);
+            width: 2em;
+            height: 2em;
+        }
+    }
+}
+
+.ultimas_noticias{
+    padding: 5rem 0;
+    background: rgba($color: v.$verde, $alpha: 0.07);
+    border-bottom: 6px solid v.$verde;
+    h2{
+        color: v.$verde;
+        text-align: center;
+        font-family: v.$ampleBold;
+        margin-bottom: 3rem;
+        position: relative;
+        width: fit-content;
+        margin-inline: auto;
+        @include m.line(8px, v.$gris);
+    }
+    .row{
+        @include m.flex(center, 20px);
+    }
+    .contenedor{
+        &>a{
+            @include m.boton(56px, 1.35rem);
+            @include m.max_width(400px);
+            margin-top: 70px;
+            margin-inline: auto;
+        }
+    }
+}
+
+.sociales{
+    padding: 6rem 0 2rem;
+    .splide{
+        &__slide{
+            @include m.flex(center, 0);
+        }
+    }
+    h2{
+        font-family: v.$ampleBold;
+        color: v.$azul;
+        text-align: center;
+        max-width: 500px;
+        margin-inline: auto;
+        @include m.television{
+            max-width: 450px;
+        }
+    }
+    .social{
+        margin: 20px auto 4.75rem;
+        border-radius: 75px;
+        padding: 1.2rem 1.5rem;
+        background: #EEEEEE;
+        border-radius: 75px;
+        width: fit-content;
+        ul{
+            width: 100%;
+            @include m.flex(center, 16px);
+            list-style: none;
+            li{
+                a{
+                    @include m.contain(66px);
+                    @include m.television{
+                        @include m.contain(60px);
+                    }
+                    @include m.desktop{
+                        @include m.contain(54px);
+                    }
+                    background: v.$verde;
+                    display: grid !important;
+                    border-radius: 50%;
+                    place-items: center;
+                    i{
+                        color: v.$blanco;
+                        font-size: 29px;
+                        @include m.television{
+                            font-size: 25px;
+                        }
+                        @include m.desktop{
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

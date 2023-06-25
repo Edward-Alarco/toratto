@@ -1,0 +1,61 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.search-form{
+    width: 100%;
+    @include m.flex(flex-start, 0);
+    height: 50px;
+    border-radius: 0 20px 0 20px;
+    position: relative;
+    @include m.shadow(0,3px,6px,#004C9729);
+    i{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        @include m.transition;
+        color: v.$verde;
+        font-size: 20px;
+    }
+    input, button{
+        height: 100%;
+    }
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+        display: none;
+    }
+    input{
+        width: calc(100% - 120px);
+        border: 1px solid v.$verde;
+        border-bottom-left-radius: 20px;
+        background: v.$blanco;
+        @include m.transition;
+        font-family: v.$medium;
+        padding-left: 42px;
+        padding-right: 10px;
+    }
+    button{
+        padding-inline: 8px;
+        border: none;
+        min-width: 120px;
+        background: v.$verde;
+        border-top-right-radius: 20px;
+        color: v.$blanco;
+        font-family: v.$heavy;
+        text-align: center;
+        font-size: 1rem;
+        &:hover, &:active{
+            background: v.$azul;
+        }
+    }
+    &:has(button:hover){
+        input{
+            border-color: v.$azul;
+        }
+        i{
+            color: v.$azul;
+        }
+    } 
+}

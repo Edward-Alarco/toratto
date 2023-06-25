@@ -1,0 +1,71 @@
+@font-face {
+    font-family: 'AvenirHeavy';
+    src: url(../../fonts/Avenir/AvenirHeavy.ttf);
+    font-weight: 900;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'AvenirBlack';
+    src: url(../../fonts/Avenir/AvenirBlack.ttf);
+    font-weight: bold;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'AvenirMedium';
+    src: url(../../fonts/Avenir/AvenirMedium.ttf);
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'AvenirLight';
+    src: url(../../fonts/Avenir/AvenirLight.ttf);
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'AvenirBook';
+    src: url(../../fonts/Avenir/AvenirBook.ttf);
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'AmpleAlt';
+    src: url(../../fonts/AmpleAlt/AmpleAlt.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: 'AmpleSoftRegular';
+    src: url(../../fonts/AmpleSoft/AmpleSoftPro-Regular.ttf);
+    font-display: swap;
+}
+
+// Fuentes
+$medium: 'AvenirMedium';
+$heavy: 'AvenirHeavy';
+$light: 'AvenirLight';
+$bold: 'AvenirBook';
+$black: 'AvenirBlack';
+
+$ampleBold: 'AmpleAlt';
+$ampleRegular: 'AmpleSoftRegular';
+
+// Medidas de Media Queries
+$telefono: 480px;
+$tablet: 768px;
+$tablet_lg: 942px;
+$desktop: 1024px;
+$desktop_lg: 1200px;
+// $television: 1462px;
+$television: 1562px;
+
+// Colores
+$blanco: #ffffff;
+$verde: #6CC24A;
+$verde2: #56A543;
+$azul: #004C97;
+$gris: #807E7E;
+$gris2: #707070;
+$gris3: #EEEEEE;
+$sombra: #00000014;
+$sombra2: #004C9729;
+$negro: #3D3D3D;

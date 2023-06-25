@@ -1,0 +1,183 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.card{
+    @include m.shadow(0, 3px, 6px, v.$sombra);
+    position: relative;
+    margin-bottom: 70px;
+    border-radius: 20px 20px 0 0;
+    &>div{
+        width: 100%;
+    }
+    &_tag{
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: fit-content !important;
+        span{
+            @include m.boton(54px, 1.4rem);
+            width: fit-content;
+            padding-inline: 28px;
+            @include m.television{
+                min-height: 46px;
+                font-size: 1.25rem;
+            }
+            &:hover{
+                background: v.$verde;
+                color: v.$blanco;
+            }
+        }
+    }
+    &_image{
+        img{
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+        }
+    }
+    &_information{
+        position: absolute;
+        bottom: -60px;
+        z-index: 3;
+        overflow: hidden;
+        left: 0;
+        @include m.transition;
+        border-radius: 20px;
+        background: v.$blanco;
+        @include m.shadow(0, 3px, 6px, v.$sombra);
+        @include m.grid(2, 0px);
+        .w-100{
+            grid-column: span 2;
+        }
+
+        &>div{
+            @include m.flex(center, 20px);
+        }
+
+        div{
+            &:nth-child(1), &:nth-child(2),
+            &:nth-child(4), &:nth-child(5){
+                padding-block: 10px;
+            }
+            &:nth-child(4), &:nth-child(5){
+                img{
+                    max-width: 56px;
+                }
+                p{
+                    font-family: v.$medium;
+                    text-align: left;
+                    b, strong, span{
+                        display: block;
+                        font-family: v.$heavy;
+                        font-weight: bolder;
+                    }
+                }
+            }
+            &:nth-child(6){
+                padding: 12px 0;
+            }
+        }
+
+    }
+
+    &_marca{
+        position: relative;
+        img{
+            @include m.max_width(140px);
+            max-height: 75px;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+            object-position: center;
+            @include m.television{
+                max-height: 65px;
+            }
+        }
+        &::before{
+            position: absolute;
+            content: '';
+            right: -1px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #EEEEEE;
+            width: 2px;
+            height: 70px;
+        }
+    }
+    &_ubicacion{
+        h3{
+            color: v.$azul;
+            text-align: center;
+            font-size: 2.65rem;
+            font-family: v.$black;
+            @include m.television{
+                font-size: 2.1rem;
+            }
+            @include m.desktop{
+                font-size: 1.5rem;
+            }
+            @include m.tablet{
+                font-size: 1.4rem;
+            }
+            @include m.telefono{
+                font-size: 1.3rem;
+            }
+        }
+    }
+    &_direccion{
+        background: v.$gris;
+        min-height: 50px;
+        i{
+            color: v.$verde;
+            font-size: 26px;
+        }
+        p{
+            font-family: v.$black;
+            color: v.$blanco;
+        }
+    }
+    &_boton{
+        @include m.transition;
+        height: 1px;
+        a{
+            opacity: 0;
+            pointer-events: none;
+            color: v.$blanco;
+            border-radius: 20px 0 20px 0;
+            background: v.$verde;
+            font-family: v.$heavy;
+            @include m.transition;
+            @include m.max_width(250px);
+            text-align: center;
+            min-height: 50px;
+            @include m.flex(center, 10px);
+            &:hover{
+                background: v.$azul;
+            }
+        }
+    }
+
+    &:not(.no_hover){
+        &:hover{
+            .card_information{
+                padding-bottom: 60px;
+            }
+            .card_boton{
+                a{
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+    }
+
+    &.blur{
+        .card_image{
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+            img{
+                filter: blur(10px) brightness(1.1);
+            }
+        }
+    }
+
+}

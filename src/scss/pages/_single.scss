@@ -1,0 +1,110 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.single{
+    &_banner{
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        min-height: 56vh;
+        padding-block: 2.5rem;
+        @include m.flex(center, 0);
+        p, h1{
+            color: v.$blanco;
+        }
+        h1{
+            font-family: v.$ampleBold;
+            font-size: 3.25rem;
+            margin: 0;
+        }
+        p{
+            font-family: v.$bold;
+            @include m.max_width(620px);
+            line-height: 1.4em;
+            margin: 1.75rem 0 2rem;
+        }
+    }
+    &_body{
+        padding: 4.5rem 0 2rem;
+        background: url(../../images/single/fondo.jpg) no-repeat;
+        background-size: cover;
+        .row{
+            @include m.flex(space-between, 50px);
+        }
+        aside{
+            @include m.max_width(300px);
+            a{
+                &:not(:last-child){
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        .col-8{
+            @include m.max_width(calc(100% - 375px));
+        }
+        .contenido{
+            @include m.shadow(0,3px,6px,v.$sombra);
+            width: 100%;
+            padding: 40px 36px;
+            border-radius: 12px;
+            background: v.$blanco;
+
+            li, p, span, a, b, strong{
+                font-family: v.$bold;
+                color: v.$gris2;
+                line-height: 1.4em;
+            }
+            p{
+                margin-bottom: 18px;
+            }
+            ul, ol{
+                li:not(:last-child){
+                    margin-bottom: 6px;
+                }
+            }
+            img{
+                width: 100%;
+            }
+            .wp-caption{
+                margin-block: 30px;
+                width: 100% !important;
+                &-text{
+                    display: block;
+                    width: 100%;
+                    background: v.$azul;
+                    padding: 16px 14px;
+                    font-style: italic;
+                    color: v.$blanco;
+                    line-height: 1.2em;
+                }
+            }
+            &>a{
+                @include m.boton(64px, 1.3rem);
+                @include m.max_width(200px);
+                @include m.shadow(0,3px,6px,v.$sombra);
+                margin-inline: auto;
+                border-radius: 0 20px 0 20px;
+            }
+        }
+        .hr{
+            margin-top: 2rem;
+            @include m.hr(v.$verde);
+            margin-bottom: 3.5rem;
+        }
+    }
+}
+
+a.back{
+    @include m.flex(flex-start, 10px);
+    margin: 0;
+    ion-icon{
+        width: 30px;
+        height: 30px;
+        color: v.$blanco;
+    }
+    p{
+        color: v.$blanco;
+        font-family: v.$medium;
+        margin: 0;
+    }
+}

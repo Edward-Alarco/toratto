@@ -1,0 +1,46 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+a{
+    font-size: 1.1rem;
+}
+h1{
+    font-size: 3.85em;
+    line-height: 1.2em;
+    @include m.television{
+        font-size: 3em;
+    }
+}
+h2{
+    font-size: 2.85em;
+    line-height: 1.2em;
+    font-family: v.$bold;
+    @include m.television{
+        font-size: 2.4em;
+    }
+    &.up{
+        font-size: 3em;
+        @include m.television{
+            font-size: 2.75em;
+        }
+    }
+    &.down{
+        font-size: 2.2em;
+        @include m.television{
+            font-size: 2em;
+        }
+    }
+}
+h3{
+    font-size: 1.65em;
+    line-height: 1.2em;
+    @include m.television{
+        font-size: 1.4em;
+    }
+}
+p{
+    font-size: 1.1rem;
+    @include m.television{
+        font-size: 1rem;
+    }
+}

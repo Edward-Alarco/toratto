@@ -1,0 +1,109 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    font-size: 16px;
+}
+
+picture{
+    display: block;
+}
+
+.w-100{width: 100%;}
+.h-100{height: 100%;}
+.wh-100{
+    @extend .w-100;
+    @extend .h-100;
+}
+
+h1, h2, h3, h4, h5, h6, p, a{
+    margin: 0;
+}
+
+img{
+    vertical-align: top;
+    height: auto;
+}
+
+.p-relative{
+    position: relative;
+}
+
+.row.start{
+    align-items: flex-start !important;
+}
+
+.row.stretch{
+    align-items: stretch !important;
+}
+
+.p-absolute{
+    position: absolute;
+}
+
+a,button,input[type="submit"]{
+    cursor: pointer;
+    @include m.transition;
+}
+
+main, section, header, footer, aside, nav{
+    width: 100%;
+}
+
+p{
+    line-height: 1.2em;
+}
+
+a{
+    text-decoration: none;
+}
+
+textarea, button, input, select, option {
+    outline: none;
+}
+
+.contenedor{
+    width: min(88%, 1500px);
+    margin-inline: auto;
+    &.xl{
+        width: min(94%, 1760px);
+    }
+    &.xxl{
+        width: 100%;
+        max-width: 100%;
+    }
+    &.small{
+        width: min(88%, 1400px);
+    }
+    &.side{
+        width: min(94%, 1700px);
+        &.left{
+            margin: 0;
+        }
+        &.right{
+            margin: 0 0 0 auto;
+        }
+    }
+}
+
+.hr{
+    @include m.hr(v.$azul);
+}
+
+video{
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.noone{
+    text-align: center;
+    color: v.$negro;
+    display: block;
+    margin-inline: auto;
+    font-family: v.$heavy;
+}

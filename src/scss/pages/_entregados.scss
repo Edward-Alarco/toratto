@@ -1,0 +1,52 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.proyectos_entregados{
+    padding: 4rem 0 7.5rem;
+    .contenedor{
+        @include m.grid(2, 30px);
+        @include m.tablet{
+            @include m.grid(1, 30px);
+        }
+    }
+}
+
+.familia{
+    background: url(../../images/entregados/banner_familia.jpg) no-repeat;
+    background-size: cover;
+    background-position: top center;
+    min-height: 400px;
+    padding-block: 3rem;
+    @include m.flex(center, 0);
+    flex-direction: column;
+
+    @include m.television{
+        min-height: 330px;
+    }
+    
+    h2{
+        color: v.$azul;
+        font-family: v.$ampleRegular;
+        font-weight: 100;
+        width: fit-content;
+        position: relative;
+        strong, b{
+            display: block;
+            color: v.$azul;
+            font-family: v.$ampleBold;
+        }
+        span{
+            font-family: v.$ampleBold;
+            color: v.$verde;
+        }
+    }
+    a{
+        margin-top: 30px;
+        @include m.boton(56px, 1.5rem);
+        @include m.max_width(200px);
+        @include m.television{
+            @include m.boton(48px, 1.3rem);
+            @include m.max_width(180px);
+        }
+    }
+}

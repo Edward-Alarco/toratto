@@ -1,0 +1,101 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.desc_temporada{
+    min-height: 87vh;
+    padding-block: 3rem;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: bottom !important;
+    @include m.flex(center, 0);
+    flex-direction: column;
+    position: relative;
+    @include m.tablet {
+        gap: 2rem;
+    }
+    .contenedor{
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            @include m.centrar_absolute;
+            border-radius: 6px;
+            @include m.hr(v.$blanco);
+            height: 6px;
+            width: min(88%, 1500px);
+        }
+    }
+    .col{
+        h3, h2, li{
+            color: v.$blanco;
+        }
+        h2{
+            font-family: v.$heavy;
+        }
+        h3{
+            margin: 1rem 0 2rem;
+            font-family: v.$light;
+            font-size: 2.1rem;
+            @include m.television{
+                font-size: 1.8rem;
+            }
+        }
+        a{
+            @include m.boton(68px, 1.6rem);
+            @include m.max_width(430px);
+            @include m.television{
+                min-height: 58px;
+                font-size: 1.4rem;
+                max-width: 400px;
+            }
+            @include m.desktop{
+                font-size: 1.4rem;
+            }
+        }
+        ul{
+            margin-top: 10px;
+            list-style: none;
+            li{
+                font-family: v.$bold;
+                font-size: 1.5rem;
+                font-weight: 100;
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+                @include m.television{
+                    font-size: 1.35rem;
+                }
+            }
+        }
+        .caja{
+            margin-bottom: 4rem;
+            @include m.television{
+                margin-bottom: 3rem;
+            }
+            h2{
+                font-family: v.$ampleBold;
+                font-size: 3.6rem;
+                @include m.max_width(380px);
+                line-height: 1.1em;
+                @include m.television{
+                    font-size: 2.875rem;
+                }
+            }
+        }
+    }
+    .ubication{
+        bottom: 75px;
+        right: 10%;
+        @include m.tablet {
+            position: relative;
+            top: 0;
+            bottom: 0;
+        }
+        .place{
+            background: v.$verde;
+        }
+        .place-2{
+            border-radius: 0px 0px 20px 20px;
+        }
+    }
+}

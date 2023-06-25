@@ -1,0 +1,82 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.duda{
+    background: url(../../images/inicio/bg_duda.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 280px;
+    @include m.flex(center, 0);
+    @include m.television{
+        padding-block: 2rem;
+        min-height: 250px;
+    }
+    .row{
+        @include m.flex(space-between, 30px);
+    }
+    p, h2{
+        color: v.$blanco;
+    }
+    h2{
+        font-family: v.$ampleBold;
+        margin-bottom: 1.8rem;
+        @include m.television{
+            margin-bottom: 1.5rem;
+        }
+    }
+    p{
+        font-size: 1.6rem;
+        font-family: v.$ampleRegular;
+        @include m.television{
+            font-size: 1.4rem;
+        }
+    }
+
+    .dude_box{
+        display: block;
+        width: 310px;
+        border-radius: 20px 20px 20px 0;
+        overflow: hidden;
+        border: 2px solid rgba($color: v.$blanco, $alpha: 0);
+        background: rgba($color: v.$blanco, $alpha: .1);
+        @include m.transition;
+        padding: 0;
+        box-shadow: none !important;
+        @include m.television{
+            width: 255px;
+        }
+        &>div{
+            width: 100%;
+            &:nth-child(1){
+                padding-block: 14px;
+            }
+            &:nth-child(2){
+                background: v.$verde;
+                padding: 6px 10px;
+                border-radius: 20px 0 20px 0;
+            }
+        }
+        img, svg{
+            display: block;
+            @include m.max_width(116px);
+            height: auto;
+            margin-inline: auto;
+            @include m.transition;
+            @include m.television{
+                max-width: 96px;
+            }
+        }
+        p{
+            font-family: v.$heavy;
+            text-align: center;
+        }
+        &:hover{
+            background: transparent;
+            border-color: v.$verde;
+            #dialog{
+                fill: v.$verde;
+            }
+        }
+    }
+
+}

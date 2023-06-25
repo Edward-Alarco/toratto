@@ -68,6 +68,7 @@ get_header();
             <?php endif; ?>
             <?php endwhile;endif; ?>
             <?php wp_reset_postdata(); ?>
+            <?php wp_reset_query(); ?>
         </div>
     </div>
 </section>

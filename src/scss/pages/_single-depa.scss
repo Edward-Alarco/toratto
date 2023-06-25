@@ -12,19 +12,31 @@
         align-items: flex-start;
         .info{
             @include m.max_width(290px);
+            @include m.desktop{
+                @include m.max_width(220px);
+            }
             p{
                 text-align: center;
                 font-size: 1.65rem;
+                @include m.desktop{
+                    font-size: 1.35rem;
+                }
             }
         }
         .place-2{
             border-radius: 20px 0 20px 0;
             background: v.$azul;
             @include m.max_width(225px);
+            @include m.desktop{
+                @include m.max_width(180px);
+            }
             p{
                 color: v.$blanco;
                 font-size: 2.15rem;
                 text-align: center;
+                @include m.desktop{
+                    font-size: 1.6rem;
+                }
             }
         }
     }
@@ -187,15 +199,25 @@
         @include m.shadow(0,3px,15px,#004C9766);
         border-radius: 30px;
         padding: 2.5rem;
+        @include m.desktop{
+            padding: 2rem;
+        }
     }
     .row{
         @include m.flex(space-between, 24px);
+        @include m.desktop{
+            flex-direction: column-reverse;
+        }
         .col{
             &:nth-child(1){
                 width: calc(33% - 20px);
             }
             &:nth-child(2){
                 width: 66%;
+            }
+
+            @include m.desktop{
+                width: 100% !important;
             }
 
             &>p{
@@ -259,6 +281,18 @@
                 background: v.$blanco;
                 border-color: v.$blanco;
                 color: v.$azul;
+                @include m.television{
+                    @include m.boton(50px, 1.15rem);
+                    background: v.$blanco;
+                    border-color: v.$blanco;
+                    color: v.$azul;
+                }
+                @include m.desktop{
+                    @include m.boton(44px, 1.075rem);
+                    background: v.$blanco;
+                    border-color: v.$blanco;
+                    color: v.$azul;
+                }
                 &:hover{
                     background: v.$blanco;
                     border-color: v.$blanco;
@@ -287,6 +321,9 @@
         padding: 9px;
         img{
             @include m.max_width(80px);
+            @include m.television{
+                @include m.max_width(68px);
+            }
         }
         div{
             p{
@@ -393,7 +430,7 @@
 }
 
 .visitanos{
-    padding: 5rem 0;
+    padding: 3rem 0 5rem;
     h2{
         color: v.$verde;
         text-align: center;
@@ -412,6 +449,9 @@
     ul{
         @include m.max_width(800px);
         margin-inline: auto;
+        @include m.desktop{
+            @include m.max_width(550px);
+        }
         li{
             width: 100%;
             border-radius: 75px;
@@ -419,17 +459,116 @@
             padding: 14px 46px;
             min-height: 94px;
             @include m.flex(flex-start, 16px);
+            @include m.television{
+                min-height: 88px;
+            }
+            @include m.desktop{
+                min-height: 80px;
+                padding: 8px 40px;
+            }
             &:not(:last-child){
                 margin-bottom: 12px;
             }
             i{
                 font-size: 30px;
                 color: v.$verde;
+                @include m.desktop{
+                    font-size: 26px;
+                }
             }
             h3{
                 color: v.$blanco;
                 font-family: v.$black;
             }
         }
+    }
+}
+
+.dreams{
+    min-height: 73vh;
+    padding-block: 4rem;
+    @include m.flex(center, 0);
+    flex-direction: column;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    @include m.tablet{
+        min-height: 58vh;
+        background-position: center right !important;
+    }
+    .contenedor{
+        position: relative;
+    }
+    .rombo{
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 40vh;
+        @include m.tablet{
+            display: none;
+        }
+    }
+    &_contenido{
+        padding-left: 10%;
+        @include m.tablet{
+            padding-left: 0;
+        }
+    }
+    h2{
+        color: v.$blanco;
+        font-family: v.$ampleBold;
+        max-width: 360px;
+        @include m.television{
+            max-width: 300px;
+        }
+    }
+    a{
+        margin-top: 12px;
+        @include m.boton(44px, 1.15rem);
+        width: fit-content;
+        border-radius: 0px 20px;
+        padding-inline: 20px;
+        &:hover{
+            color: v.$blanco;
+        }
+    }
+}
+
+.avance_obra{
+    background: transparent;
+    padding: 4rem 0;
+    h2{
+        color: v.$verde;
+        text-align: center;
+        font-family: v.$ampleBold;
+        margin-bottom: 2.5rem;
+        position: relative;
+        width: fit-content;
+        margin-inline: auto;
+        @include m.line(8px, v.$gris);
+    }
+}
+
+.masonry{
+    width: 100%;
+    overflow: hidden;
+    &_item{
+        font-size: 0;
+        a, img{
+            display: block;
+            width: 100%;
+        }
+        img{
+            height: auto;
+            border-radius: 7px;
+        }
+    }
+}
+
+.maps{
+    .actions{
+        top: 0;
+        left: 0;
     }
 }

@@ -22,6 +22,11 @@
                 min-height: 46px;
                 font-size: 1.25rem;
             }
+            @include m.desktop{
+                min-height: 42px;
+                font-size: 1.075rem;
+                padding-inline: 12px;
+            }
             &:hover{
                 background: v.$verde;
                 color: v.$blanco;
@@ -51,6 +56,9 @@
 
         &>div{
             @include m.flex(center, 20px);
+            @include m.desktop{
+                gap: 10px;
+            }
         }
 
         div{
@@ -61,6 +69,12 @@
             &:nth-child(4), &:nth-child(5){
                 img{
                     max-width: 56px;
+                    @include m.desktop{
+                        max-width: 42px;
+                        max-height: 30px;
+                        object-fit: contain;
+                        object-position: center;
+                    }
                 }
                 p{
                     font-family: v.$medium;
@@ -69,6 +83,9 @@
                         display: block;
                         font-family: v.$heavy;
                         font-weight: bolder;
+                    }
+                    @include m.desktop{
+                        font-size: 14px;
                     }
                 }
             }
@@ -150,9 +167,19 @@
             text-align: center;
             min-height: 50px;
             @include m.flex(center, 10px);
+            @include m.desktop{
+                min-height: 44px;
+                @include m.max_width(190px);
+            }
             &:hover{
                 background: v.$azul;
             }
+        }
+    }
+
+    &_cuartos, &_metros{
+        @include m.desktop{
+            flex-wrap: nowrap !important;
         }
     }
 

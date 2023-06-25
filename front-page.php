@@ -46,6 +46,31 @@ get_header();
 
 <?php get_template_part('inc/desc_temporada'); ?>
 
+<section class="best_option">
+    <div class="contenedor">
+        <div class="row">
+            <div class="col">
+                <?php if(get_field('archivo_opcion')['type'] == 'image'): ?>
+                    <img src="<?php echo get_field('archivo_opcion')['url'] ?>" 
+                        alt="<?php echo get_field('archivo_opcion')['alt'] ?>" 
+                        title="<?php echo get_field('archivo_opcion')['title'] ?>" 
+                        width="<?php echo get_field('archivo_opcion')['width'] ?>" 
+                        height="<?php echo get_field('archivo_opcion')['height'] ?>" 
+                        loading="lazy">
+                <?php else: ?>
+                    <video controls>
+                        <source src="<?php echo get_field('archivo_opcion')['url'] ?>">
+                    </video>
+                <?php endif; ?>
+            </div>
+            <div class="col">
+                <h2><?php echo get_field('titulo_opcion') ?></h2>
+                <?php echo get_field('descripcion_opcion') ?>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php get_template_part('inc/duda'); ?>
 
 <?php 

@@ -6,6 +6,9 @@
     .tab{
         // overflow: hidden;
         @include m.flex(flex-start, 0);
+        @include m.desktoplg{
+            margin-bottom: 20px;
+        }
         button{
             background: v.$azul;
             border: 1px solid v.$azul;
@@ -17,6 +20,9 @@
             @include m.flex(center, 0);
             @include m.max_width(140px);
             @include m.transition;
+            @include m.desktoplg{
+                border-radius: 0 !important;
+            }
             p{
                 color: v.$blanco;
                 font-family: v.$black;
@@ -35,10 +41,16 @@
                 width: calc(100% - 1px);
                 height: 1px;
                 background: v.$gris;
+                @include m.desktoplg{
+                    display: none !important;
+                }
             }
             &.active{
                 background: v.$gris;
                 border-color: v.$verde;
+                @include m.desktoplg{
+                    border-color: v.$gris;
+                }
                 p{
                     color: v.$verde;
                 }
@@ -49,12 +61,18 @@
             @include m.desktop{
                 padding: 2rem;
             }
+            @include m.tabletlg{
+                padding: 1.5rem;
+            }
             display: none;
             @include m.transition;
             background: v.$gris;
             border: 1px solid v.$verde;
             border-radius: 30px;
             border-top-left-radius: 0;
+            @include m.desktoplg{
+                border-radius: 0 !important;
+            }
             p{
                 margin-bottom: 14px;
                 font-weight: 100;
@@ -75,6 +93,9 @@
                 text-align: center;
                 font-size: 1.3rem;
                 margin-bottom: 22px;
+                @include m.tabletlg{
+                    font-size: 1.2rem;
+                }
             }
             b, strong{
                 font-family: v.$black;

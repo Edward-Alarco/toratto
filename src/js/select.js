@@ -15,7 +15,8 @@
             selectOptions = document.querySelector(".select-options"),
             opcionesLi = Array.from(selectOptions.querySelectorAll('li'));
         //imagen plano
-        const img = document.querySelector('.canvas img');
+        const img = document.querySelector('.canvas img'),
+            enlace_gbox = document.querySelector('.canvas .glightbox3');
 
         //poniendole valores a los input hiddens
         hiddenDorms.value = activo.replace('d','');
@@ -59,6 +60,7 @@
 
                 if(event.target.getAttribute('data-img')!=''){
                     img.src = event.target.getAttribute('data-img')
+                    enlace_gbox.href = event.target.getAttribute('data-img')
                 }
 
                 hiddenFlat.value = select.selectedOptions[0].textContent;

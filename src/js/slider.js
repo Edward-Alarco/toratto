@@ -18,10 +18,14 @@
             pagination: false,
             perMove: 1,
             breakpoints: {
+                1024: {
+                    perPage: 2,
+                    gap: '1.25rem',
+                },
                 768: {
                     perPage: 1,
                     arrows: false,
-                    gap: '2.8rem',
+                    gap: '1rem',
                 },
             }
         }).mount();
@@ -37,6 +41,11 @@
             pagination: false,
             clones: true,
             gap: '10px',
+            breakpoints: {
+                660: {
+                    perPage: 1
+                }
+            }
         }).mount(window.splide.Extensions);
     }
 

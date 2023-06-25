@@ -19,7 +19,6 @@ main{
         height: calc(101vh - 120px);
     }
     @include m.desktop{
-        margin-top: -50px;
         height: calc(101vh - 100px)
     }
     @include m.flex(center, 0);
@@ -35,8 +34,9 @@ main{
     .ubication{
         top: 30px;
         right: 30px;
-        @include m.telefono{
-            right: 10px;
+        @media (max-width: 660px){
+            top: 16px;
+            right: 16px;
         }
     }
     .contenedor{
@@ -48,11 +48,35 @@ main{
             font-size: 2rem;
             text-align: center;
             margin: 2rem 0 4rem;
+            @include m.television{
+                font-size: 1.8rem;
+                margin: 2rem 0 4.5rem;
+            }
+            @include m.desktop{
+                margin: 2rem 0;
+                font-size: 1.6rem;
+            }
+            @media (max-width: 660px){
+                margin: 1.85rem 0;
+                font-size: 1.4rem;
+            }
         }
         a{
             @include m.boton(58px, 1.4rem);
             @include m.max_width(370px);
             margin-inline: auto;
+            @include m.television{
+                @include m.boton(52px, 1.25rem);
+                @include m.max_width(320px);
+            }
+            @include m.desktop{
+                @include m.boton(48px, 1.15rem);
+                @include m.max_width(270px);
+            }
+            @media (max-width: 660px){
+                @include m.boton(44px, 1.05rem);
+                @include m.max_width(230px);
+            }
         }
     }
     h1{
@@ -68,7 +92,11 @@ main{
                 font-size: 4rem;
             }
             @include m.desktop{
-                font-size: 2rem;
+                font-size: 3.2rem;
+            }
+            @media (max-width: 660px){
+                font-size: 2.45rem;
+                margin: 0 !important;
             }
             &:last-child{
                 color: v.$verde;
@@ -110,6 +138,12 @@ main{
                 @include m.television{
                     font-size: 1.35rem;
                 }
+                @media (max-width: 660px){
+                    font-size: 1.1rem;
+                }
+            }
+            @media (max-width: 660px){
+                padding: 10px;
             }
         }
         &.logo{
@@ -117,9 +151,18 @@ main{
             border-radius: 20px 0 20px 0;
             @include m.max_width(250px);
             padding-block: 5px;
+            @include m.desktop{
+                @include m.max_width(200px);
+            }
             img{
                 display: block;
                 margin: 0 auto;
+                @include m.desktop{
+                    @include m.max_width(120px);
+                    max-height: 80px;
+                    object-fit: contain;
+                    object-position: center;
+                }
             }
         }
         &.place{
@@ -150,6 +193,72 @@ main{
     }
 }
 
+.best_option{
+    padding: 5rem 0;
+    background: url(../../images/inicio/rombos.jpg) no-repeat;
+    background-size: 100%;
+    background-position: center left;
+    background-attachment: fixed;
+    @media (max-width: 900px){
+        padding: 4rem 0;
+    }
+    .row{
+        @include m.flex(space-between, 0);
+        @media (max-width: 900px){
+            gap: 24px;
+            flex-direction: column-reverse;
+        }
+        .col{
+            &:nth-child(1){
+                width: 56%;
+            }
+            &:nth-child(2){
+                width: 41%;
+            }
+            @media (max-width: 900px){
+                width: 100% !important;
+            }
+            video, img{
+                width: 100%;
+                aspect-ratio: 16/9;
+                height: auto;
+                object-fit: contain;
+                @include m.shadow(0, 3px, 6px, v.$sombra);
+                border-radius: 20px 0 20px 0;
+            }
+        }
+    }
+    h2{
+        color: v.$verde;
+        font-family: v.$ampleBold;
+        max-width: 290px;
+        margin-bottom: 20px;
+        @include m.television{
+            max-width: 250px;
+        }
+        @media (max-width: 900px){
+            max-width: 100%;
+            margin-bottom: 14px;
+        }
+    }
+    p{
+        color: v.$azul;
+        font-family: v.$medium;
+        font-size: 1.4rem;
+        max-width: 290px;
+        @include m.television{
+            max-width: 240px;
+            font-size: 1.3rem;
+        }
+        @media (max-width: 900px){
+            max-width: 100%;
+        }
+        @include m.tablet{
+            font-size: 1.15rem;
+        }
+    }
+}
+
 .en_venta{
     padding: 5rem 0;
     h2{
@@ -174,11 +283,19 @@ main{
             @include m.television{
                 font-size: 1.45rem;
             }
+            @include m.tablet{
+                font-size: 1.15rem;
+            }
         }
         &>a{
             @include m.boton(50px, 1.35rem);
             @include m.max_width(340px);
             margin: 50px auto 0;
+            @include m.desktop{
+                margin: 40px auto 0;
+                @include m.boton(44px, 1.15rem);
+                @include m.max_width(290px);
+            }
         }
     }
     .splide__slide{
@@ -187,9 +304,15 @@ main{
     .splide__arrow{
         &--prev{
             left: -3em;
+            @include m.desktop{
+                left: -2em;
+            }
         }
         &--next{
             right: -3em;
+            @include m.desktop{
+                right: -2em;
+            }
         }
         svg{
             fill: rgba($color: v.$verde, $alpha: 0.5);
@@ -227,6 +350,10 @@ main{
                 @include m.boton(52px, 1.15rem);
                 @include m.max_width(350px);
             }
+            @include m.desktop{
+                @include m.boton(44px, 1.15rem);
+                @include m.max_width(290px);
+            }
         }
     }
 }
@@ -247,6 +374,9 @@ main{
         @include m.television{
             max-width: 450px;
         }
+        @include m.desktop{
+            max-width: 370px;
+        }
     }
     .social{
         margin: 20px auto 4.75rem;
@@ -255,6 +385,11 @@ main{
         background: #EEEEEE;
         border-radius: 75px;
         width: fit-content;
+        @include m.tablet{
+            width: 100%;
+            border-radius: 0;
+            padding: 1rem;
+        }
         ul{
             width: 100%;
             @include m.flex(center, 16px);
@@ -266,7 +401,7 @@ main{
                         @include m.contain(60px);
                     }
                     @include m.desktop{
-                        @include m.contain(54px);
+                        @include m.contain(50px);
                     }
                     background: v.$verde;
                     display: grid !important;
@@ -279,7 +414,7 @@ main{
                             font-size: 25px;
                         }
                         @include m.desktop{
-                            font-size: 22px;
+                            font-size: 20px;
                         }
                     }
                 }

@@ -3,17 +3,17 @@
 get_header();
 
 $ID = get_the_ID();
-
 $taxonomy = 'departamentosgenero';
-//$categories = get_the_terms( $ID, $taxonomy );
+//$categories = get_the_terms($ID, $taxonomy);
 
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
 <section class="depa_banner" style="background: url(<?php echo get_field('imagen_banner')['url']; ?>);">
     <div class="contenedor">
         <div class="ubication">
             <div class="info">
-                <p>Entrega Inmediata</p>
+                <p><?php echo get_field('etiqueta') ?></p>
             </div>
             <div class="logo">
                 <img src="<?php echo get_field('imagen_logo')['url'] ?>" alt="<?php echo get_field('imagen_logo')['alt'] ?>" title="<?php echo get_field('imagen_logo')['title'] ?>" width="<?php echo get_field('imagen_logo')['width'] ?>" height="<?php echo get_field('imagen_logo')['height'] ?>" loading="lazy">
@@ -99,7 +99,43 @@ $taxonomy = 'departamentosgenero';
 
 <?php get_template_part('inc/desc_temporada'); ?>
 
-<section class="planos">
+<?php if(have_rows('avances')): ?>
+<section class="avance_obra" id="galeria">
+    <div class="contenedor">
+        <h2><?php echo get_field('titulo_avance') ?></h2>
+        <div class="masonry">
+            <?php while(have_rows('avances')): the_row(); ?>
+            <div class="masonry_item">
+                <a href="<?php echo get_sub_field('imagen_avance')['url'] ?>" class="glightbox">
+                    <img src="<?php echo get_sub_field('imagen_avance')['url'] ?>" 
+                        alt="<?php echo get_sub_field('imagen_avance')['alt'] ?>" 
+                        title="<?php echo get_sub_field('imagen_avance')['title'] ?>" 
+                        width="<?php echo get_sub_field('imagen_avance')['width'] ?>" 
+                        height="<?php echo get_sub_field('imagen_avance')['height'] ?>" loading="lazy">
+                </a>
+            </div>
+            <?php endwhile; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<?php if(get_field('mostrar_seccion_sueno')): ?>
+<section class="dreams" style="background: url(<?php echo get_field('fondo')['url'] ?>)">
+    <div class="contenedor">
+        <div class="dreams_contenido">
+            <img src="<?php echo IMG;?>/depa/rombo.svg" alt="Imagen fondo" title="Imagen fondo" class="p-absolute rombo">
+            <h2><?php echo get_field('titulo_sueno') ?></h2>
+
+            <?php if(!empty(get_field('enlace_vista_360'))): ?>
+            <a href="<?php echo get_field('enlace_vista_360') ?>">Haz clic aquí para verlo en 360°</a>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<section class="planos" id="plano">
     <div class="contenedor xl">
         <h2>¡Tu nuevo hogar está a un solo paso!</h2>
         <div class="contacto_section w-100 contact_planos">
@@ -171,18 +207,40 @@ $taxonomy = 'departamentosgenero';
                         </div>
                         <?php if(have_rows('lista_flat')): while(have_rows('lista_flat')): the_row(); ?>
                         <?php if (!$primera_fila): ?>
-                            <img 
-                                src="<?php echo get_sub_field('imagen')['url'] ?>" 
-                                width="<?php echo get_sub_field('imagen')['width'] ?>" 
-                                height="<?php echo get_sub_field('imagen')['height'] ?>" 
-                                title="Plano" alt="Plano" loading="lazy"
-                            >
+                            <a href="<?php echo get_sub_field('imagen')['url'] ?>" class="glightbox3 wh-100" style="display:block">
+                                <img 
+                                    src="<?php echo get_sub_field('imagen')['url'] ?>" 
+                                    width="<?php echo get_sub_field('imagen')['width'] ?>" 
+                                    height="<?php echo get_sub_field('imagen')['height'] ?>" 
+                                    title="Plano" alt="Plano" loading="lazy">
+                            </a>
                         <?php $primera_fila = true; endif; ?>
                         <?php endwhile;endif; ?>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="maps p-relative">
+    <div class="contenedor xxl">
+        <div class="p-absolute actions">
+            <div class="ubication" style="align-items:flex-start">
+                <div class="info">
+                    <p><?php echo str_replace('Proyecto', '', get_the_title()); ?></p>
+                </div>
+                <div class="place-2">
+                    <p><?php echo get_field('distrito') ?></p>
+                </div>
+            </div>
+        </div>
+        <img src="<?php echo get_field('imagen_mapa')['url'] ?>" 
+            alt="<?php echo get_field('imagen_mapa')['alt'] ?>" 
+            title="<?php echo get_field('imagen_mapa')['title'] ?>" 
+            width="<?php echo get_field('imagen_mapa')['width'] ?>" 
+            height="<?php echo get_field('imagen_mapa')['height'] ?>" 
+            loading="lazy" class="w-100">
     </div>
 </section>
 
@@ -207,3 +265,23 @@ $taxonomy = 'departamentosgenero';
 <?php get_template_part('inc/duda'); ?>
 
 <?php get_footer(); ?>
+
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+    if(document.querySelector('#galeria')){
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true
+        });
+    }
+    if(document.querySelector('#plano')){
+        const lightbox = GLightbox({
+            selector: '.glightbox3',
+            touchNavigation: false,
+            loop: true,
+            draggable: false,
+            preload: true,
+        });
+    }
+</script>

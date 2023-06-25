@@ -44,9 +44,11 @@ $wp_query = new WP_Query(array(
                 <?php while (have_posts()) : the_post(); ?>
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="card card_departamento">
+                            <?php if(!empty(get_field('tag'))): ?>
                             <div class="card_tag">
-                                <span>Pre Venta</span>
+                                <span><?php echo get_field('tag'); ?></span>
                             </div>
+                            <?php endif; ?>
                             <div class="card_image">
                                 <?php
                                 $thumbID = get_post_thumbnail_id($post->ID);

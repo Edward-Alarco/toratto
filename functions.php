@@ -19,19 +19,23 @@ if(!function_exists ('general_scripts')):
         wp_register_style('style', get_stylesheet_uri(),array(),'1.0.0','all');
         wp_register_style('maincss', get_template_directory_uri().'/public/css/app.css','1.0.0','all');
         wp_register_style('splidecss', get_template_directory_uri().'/libraries/css/splide.min.css','1.0.0','all');
+        // wp_register_style('glightboxcss', get_template_directory_uri().'/node_modules/glightbox/dist/css/glightbox.min.css','1.0.0','all');
 
         wp_enqueue_style('style');
         wp_enqueue_style('maincss');
         wp_enqueue_style('splidecss');
+        // wp_enqueue_style('glightboxcss');
             
         wp_register_script('filtrojs', get_template_directory_uri().'/libraries/js/filtrado.js',array('jquery'),'1.0.0',true);
         wp_register_script('splidejs', get_template_directory_uri().'/libraries/js/splide.min.js',array(),'1.0.0',true);
         wp_register_script('splideautoscrolljs', get_template_directory_uri().'/libraries/js/splide-extension-auto-scroll.min.js',array(),'1.0.0',true);
         wp_register_script('mainjs', get_template_directory_uri().'/public/js/main.min.js',array(),'1.0.0',true);
+        // wp_register_script('glightboxjs', get_template_directory_uri().'/node_modules/glightbox/dist/js/glightbox.min.js',array(),'1.0.0',true);
 
         wp_enqueue_script('filtrojs');
         wp_enqueue_script('splidejs');
         wp_enqueue_script('splideautoscrolljs');
+        // wp_enqueue_script('glightboxjs');
         wp_enqueue_script('mainjs');
     }
 endif;

@@ -48,12 +48,16 @@
         font-family: v.$bold;
         border: 1px solid v.$blanco;
         @include m.television{
-            min-height: 50px;
+            min-height: 48px;
             border-radius: 8px;
         }
     }
     textarea{
+        resize: none;
         padding-block: 10px;
+        @include m.television{
+            height: 100px;
+        }
     }
 }
 
@@ -219,6 +223,9 @@
             width: 100%;
             @include m.boton(56px, 1.3rem);
             border-radius: 0 20px 0 20px;
+            @include m.television{
+                @include m.boton(50px, 1.15rem);
+            }
         }
     }
 }

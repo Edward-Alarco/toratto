@@ -13,6 +13,17 @@
     }
     .row{
         @include m.flex(space-between, 30px);
+        @media (max-width: 660px){
+            .col{
+                width: 100%;
+                h2, p, .dude_box{
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+            }
+        }
     }
     p, h2{
         color: v.$blanco;
@@ -23,12 +34,18 @@
         @include m.television{
             margin-bottom: 1.5rem;
         }
+        @include m.desktop{
+            margin-bottom: .9rem;
+        }
     }
     p{
         font-size: 1.6rem;
         font-family: v.$ampleRegular;
         @include m.television{
             font-size: 1.4rem;
+        }
+        @media (max-width: 660px){
+            font-size: 1.2rem;
         }
     }
 

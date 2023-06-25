@@ -34,12 +34,13 @@ $id_single = intval(get_the_ID());
                 global $wp_query;
                 $wp_query = new WP_Query( array(
                     'post_type' => 'post', 
-                    'posts_per_page' => 2,
+                    'posts_per_page' => 3,
                     'post_status' => 'publish'
                 ));
             ?>
             <aside class="posts">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+                <?php if($post->ID != $id_single): ?>
                 <?php if(has_post_thumbnail()): ?>
                 <a class="post small_post" href="<?php the_permalink(); ?>" title="<?php the_title();?>">
                     <div class="post_image">
@@ -58,8 +59,10 @@ $id_single = intval(get_the_ID());
                     </div>
                 </a>
                 <?php endif; ?>
+                <?php endif; ?>
                 <?php endwhile;endif; ?>
                 <?php wp_reset_postdata(); ?>
+                <?php wp_reset_query(); ?>
             </aside>
         </div>
     </div>

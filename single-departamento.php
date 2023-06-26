@@ -227,13 +227,33 @@ $taxonomy = 'departamentosgenero';
     <div class="contenedor xxl">
         <div class="p-absolute actions">
             <div class="ubication" style="align-items:flex-start">
-                <div class="info">
-                    <p><?php echo str_replace('Proyecto', '', get_the_title()); ?></p>
+                <div class="place" style="background:#6CC24A">
+                    <p><?php echo get_field('nombre_proyecto'); ?></p>
                 </div>
                 <div class="place-2">
                     <p><?php echo get_field('distrito') ?></p>
                 </div>
             </div>
+            <?php if(!empty(get_field('enlace_maps'))): ?>
+            <a href="<?php echo get_field('enlace_maps') ?>" class="waze" target="_blank">
+                <div>
+                    <p>Ver con<br>google maps</p>
+                </div>
+                <div>
+                    <img src="<?php echo IMG; ?>/depa/maps.png" alt="Maps" title="Maps">
+                </div>
+            </a>
+            <?php endif; ?>
+            <?php if(!empty(get_field('enlace_waze'))): ?>
+            <a href="<?php echo get_field('enlace_waze') ?>" class="maps" target="_blank">
+                <div>
+                    <p>Ver con<br>Waze</p>
+                </div>
+                <div>
+                    <img src="<?php echo IMG; ?>/depa/wase.png" alt="Waze" title="Waze">
+                </div>
+            </a>
+            <?php endif; ?>
         </div>
         <img src="<?php echo get_field('imagen_mapa')['url'] ?>" 
             alt="<?php echo get_field('imagen_mapa')['alt'] ?>" 

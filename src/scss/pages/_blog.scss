@@ -45,8 +45,25 @@
         @include m.transition;
         @include m.shadow(0,3px,6px, v.$sombra2);
         border-radius: 6px;
+        position: relative;
         @include m.tablet{
             flex-direction: column;
+        }
+        select{
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            opacity: 0;
+            z-index: 2;
+        }
+        select, option{
+            width: 100%;
+            border-radius: 0 !important;
+            font-family: v.$medium;
+        }
+        option{
+            padding: 4px;
+            color: v.$azul;
         }
         img{
             @include m.max_width(30px);

@@ -1,3 +1,4 @@
+
 jQuery(document).ready(function($) {
     var ordenAscendente = true; // Variable para controlar el orden ascendente y descendente
     var ordenAscendente2 = true; // Variable para controlar el orden ascendente y descendente
@@ -53,6 +54,19 @@ jQuery(document).ready(function($) {
         var $contenedor = $('.busqueda_contenido');
         $contenedor.empty().append($entradas);
     });
-     
+
+    $('.filtro-distrito #distrito').on('change', function() {
+        var lugar = $(this).find('option:selected').text();
+
+        $('.card_departamento').css('display', 'none');
+        $(`.card_departamento[data-depa="${lugar}"]`).css('display', 'block');
+    });
+
+    $('.filtro-proyecto #proyecto').on('change', function() {
+        var proyecto = $(this).find('option:selected').text();
+
+        $('.card_departamento').css('display', 'none');
+        $(`.card_departamento[data-proyecto="${proyecto}"]`).css('display', 'block');
+    });
 
 });

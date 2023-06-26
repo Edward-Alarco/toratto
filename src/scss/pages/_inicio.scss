@@ -47,17 +47,18 @@ main{
             font-family: v.$heavy;
             font-size: 2rem;
             text-align: center;
-            margin: 2rem 0 4rem;
+            margin: 2rem auto 4rem;
+            width: fit-content;
             @include m.television{
                 font-size: 1.8rem;
-                margin: 2rem 0 4.5rem;
+                margin: 2rem auto 4.5rem;
             }
             @include m.desktop{
-                margin: 2rem 0;
+                margin: 2rem auto;
                 font-size: 1.6rem;
             }
             @media (max-width: 660px){
-                margin: 1.85rem 0;
+                margin: 1.85rem auto;
                 font-size: 1.4rem;
             }
         }

@@ -160,6 +160,9 @@ aside:not(.posts){
     @include m.flex(center, 20vh);
     @include m.transition;
     flex-direction: column;
+    @media (max-width: 1300px){
+        gap: 30px;
+    }
     @include m.desktop{
         right: -100%;
         max-width: 100%;
@@ -191,7 +194,7 @@ aside:not(.posts){
             &:not(:last-child){
                 margin-bottom: 18px;
                 @media (max-width:1300px){
-                    margin-bottom: 10px;
+                    margin-bottom: 8px;
                 }
             }
             a{

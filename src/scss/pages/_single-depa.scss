@@ -570,5 +570,111 @@
     .actions{
         top: 0;
         left: 0;
+        @include m.tabletlg{
+            left: 10px;
+        }
+        &>div{
+            margin-bottom: 16px;
+            margin-left: 100px;
+            @include m.tabletlg{
+                margin-left: 0;
+                margin-bottom: 12px;
+            }
+        }
+        a{
+            @include m.flex(flex-start, 0);
+            width: fit-content;
+            border-radius: 0 100px 100px 0;
+            border: 2px solid transparent;
+            border-left: none !important;
+            margin: 0;
+            @include m.tabletlg{
+                border-radius: 50%;
+            }
+            &:not(:last-child){
+                margin-bottom: 5px;
+                @include m.tabletlg{
+                    margin-bottom: 2px;
+                }
+            }
+            div{
+                margin: 0;
+                @include m.transition;
+                &:nth-child(1){
+                    opacity: 0;
+                    pointer-events: none;
+                    padding-inline: 24px 14px;
+                    p{
+                        color: v.$blanco;
+                        font-family: v.$ampleBold;
+                        text-align: left;
+                        width: 79px;
+                        font-size: 14px;
+                        line-height: 1em;
+                        @include m.television{
+                            width: 67px;
+                            font-size: 12px;
+                            line-height: 1em;
+                        }
+                    }
+                    @include m.tabletlg{
+                        display: none;
+                    }
+                }
+                &:nth-child(2){
+                    border-radius: 50%;
+                    border: 2px solid #ccc;
+                    @include m.shadow(0, 3px, 6px, v.$sombra);
+                    display: grid;
+                    place-items: center;
+                    padding: 10px;
+                    @include m.contain(62px);
+                    @include m.television{
+                        @include m.contain(48px);
+                    }
+                    @include m.tabletlg{
+                        @include m.contain(44px);
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        object-position: center;
+                    }
+                }
+            }
+
+            &.waze{
+                div:nth-child(2){
+                    background: v.$blanco;
+                }
+            }
+            &.maps{
+                div:nth-child(2){
+                    background: #15CCFF;
+                }
+            }
+
+            &:hover{
+                background: v.$verde;
+                @include m.shadow(0, 3px, 6px, v.$sombra);
+                border-color: #ccc;
+                div{
+                    &:nth-child(1){
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                    &:nth-child(2){
+                        border-color: transparent;
+                        box-shadow: none !important;
+                        background: v.$verde !important;
+                    }
+                }
+            }
+        }
     }
+}
+
+.gslide-image img{
+    border-radius: 10px;
 }

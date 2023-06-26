@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<section class="banner_inline trabaja">
+<section class="banner_inline trabaja" style="background: url(<?php echo get_field('imagen_banner')['url'] ?>)">
     <div class="contenedor">
         <h1>Trabaja <b>con <span>nosotros</span></b></h1>
     </div>

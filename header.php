@@ -15,6 +15,8 @@
     <title><?php the_title();?></title>
     <?php endif; ?>
 
+    <style>html{margin-top:0 !important;}</style>
+
 </head>
 <body <?php body_class(); ?>>
 

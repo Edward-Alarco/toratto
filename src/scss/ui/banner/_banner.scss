@@ -60,3 +60,113 @@
         }
     }
 }
+
+.banner_rectangle{
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: bottom !important;
+    min-height: 66vh;
+    @include m.flex(center, 0);
+    flex-direction: column;
+    padding-block: 2rem;
+    overflow-x: hidden;
+    @include m.tablet{
+        background-color: #0000005c !important;
+        background-blend-mode: color-burn !important;
+        min-height: 42vh;
+    }
+    &.deps{
+        background: url(../../images/depa/deps.jpg);
+    }
+    .caja_titulo{
+        position: relative;
+        &::before{
+            content: '';
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 0 50px 0 50px;
+            background: rgba($color: v.$verde, $alpha: 0.85);
+            position: absolute;
+            height: 140%;
+            z-index: 0;
+            @include m.max_width(600px);
+            @include m.television{
+                @include m.max_width(500px);
+            }
+            @include m.tablet{
+                display: none;
+            }
+        }
+        p{
+            color: v.$blanco;
+            font-family: v.$ampleRegular;
+            font-size: 1.3rem;
+            @include m.television{
+                font-size: 1.1rem;
+            }
+            @include m.tablet{
+                text-align: center;
+            }
+        }
+        &>div{
+            position: relative;
+            z-index: 2;
+            @include m.max_width(580px);
+            @include m.television{
+                @include m.max_width(480px);
+            }
+            @include m.tablet{
+                @include m.max_width(100%);
+            }
+        }
+        .hr{
+            background: v.$blanco;
+            margin: 6px 0 1rem;
+            @include m.max_width(550px);
+            @include m.television{
+                @include m.max_width(450px);
+            }
+            @include m.tablet{
+                @include m.max_width(100%);
+            }
+        }
+        .contenido{
+            padding-left: 6%;
+            @include m.tablet{
+                padding-left: 0;
+            }
+        }
+        h1{
+            color: v.$blanco;
+            font-family: v.$ampleRegular;
+            font-weight: 100;
+            font-size: 3rem;
+            @include m.television{
+                font-size: 2rem;
+            }
+            @include m.tablet{
+                text-align: center;
+            }
+            em, b{
+                display: block;
+                font-family: v.$ampleBold;
+            }
+            b{
+                margin-left: 50px;
+                @include m.tablet{
+                    margin-left: 0;
+                }
+            }
+            em{
+                margin-left: 100px;
+                font-style: normal;
+                color: v.$azul;
+                @include m.tablet{
+                    margin-left: 0;
+                    color: v.$blanco;
+                }
+            }
+        }
+    }
+}

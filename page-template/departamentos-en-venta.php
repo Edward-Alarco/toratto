@@ -7,43 +7,76 @@ get_header();
 ?>
 
 <?php
-global $wp_query;
-$wp_query = new WP_Query(array(
-    'post_type' => 'departamento',
-    'posts_per_page' => 500,
-    'post_status' => 'publish'
-));
+    global $wp_query;
+    $wp_query = new WP_Query(array(
+        'post_type' => 'departamento',
+        'posts_per_page' => 500,
+        'post_status' => 'publish'
+    ));
 ?>
+
+<input type="hidden" name="uri" class="uri" value="<?php echo admin_url('admin-ajax.php'); ?>">
+<section class="banner_rectangle deps" style="background: url(<?php echo get_field('imagen_banner')['url'] ?>)">
+    <div class="contenedor xxl">
+        <div class="caja_titulo">
+            <div class="contenido">
+                <h1>
+                    Tú también puedes ser
+                    <b>parte de la familia</b>
+                    <em>Toratto</em>
+                </h1>
+            </div>
+            <div class="hr"></div>
+            <div class="contenido">
+                <p>Descubre nuestros departamentos en venta</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="listado_departamentos articulos_blog">
     <div class="contenedor">
         <div class="busqueda_avanzada w-100">
             <div class="filtros w-100" id="filtros">
-                <button class="filtro-nombres w-100">
-                    <img src="<?php echo IMG; ?>/blog/filtro1.svg">
+                <button class="filtro-distrito w-100">
+                    <img src="<?php echo IMG; ?>/depa/peru.svg">
                     <p>Filtrar por distrito o ciudad</p>
+                    <?php if ($wp_query->have_posts()) : ?>
+                    <select name="distrito" id="distrito">
+                        <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+                        <option value=""><?php echo get_field('distrito'); ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                    <?php endif; ?>
                 </button>
-                <button class="filtro-vistos w-100">
-                    <img src="<?php echo IMG; ?>/blog/filtro2.svg">
+                <button class="filtro-proyecto w-100">
+                    <img src="<?php echo IMG; ?>/depa/marker.svg">
                     <p>Filtrar por proyecto</p>
+                    <?php if ($wp_query->have_posts()) : ?>
+                    <select name="proyecto" id="proyecto">
+                        <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+                        <option value=""><?php echo get_field('nombre_proyecto'); ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                    <?php endif; ?>
                 </button>
             </div>
             <div class="buscador w-100">
                 <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
                     <i class="fas fa-search"></i>
+                    <input type="hidden" value="departamento" name="p" />
                     <input type="search" class="search-field" placeholder="Buscar" value="<?php echo get_search_query() ?>" name="s" />
                     <button type="submit" class="search-submit">Buscar</button>
                 </form>
-                <?php //get_search_form(); ?>
             </div>
         </div>
     </div>
     <div class="contenedor">
         <div class="contenedor_depas">
-            <?php if (have_posts()) : ?>
-                <?php while (have_posts()) : the_post(); ?>
+            <?php if ($wp_query->have_posts()) : ?>
+                <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
                     <?php if (has_post_thumbnail()) : ?>
-                        <div class="card card_departamento">
+                        <div class="card card_departamento" data-depa="<?php echo get_field('distrito'); ?>" data-proyecto="<?php echo get_field('nombre_proyecto'); ?>">
                             <?php if(!empty(get_field('tag'))): ?>
                             <div class="card_tag">
                                 <span><?php echo get_field('tag'); ?></span>

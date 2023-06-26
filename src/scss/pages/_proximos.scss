@@ -37,6 +37,15 @@
         @include m.text-shadow;
         font-size: 3.25rem;
         @include m.line(8px, v.$verde);
+        @include m.television{
+            font-size: 2.75rem;
+        }
+        @include m.tabletlg{
+            font-size: 2.35rem;
+        }
+        @include m.tablet{
+            font-size: 1.9rem;
+        }
         b, strong{
             display: block;
             font-family: v.$ampleBold;

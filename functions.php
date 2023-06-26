@@ -49,6 +49,13 @@ add_theme_support( 'post-thumbnails' );
 function my_excerpt_length($length){return 22;}
 add_filter('excerpt_length', 'my_excerpt_length');
 
+function debuguear($variable) : string {
+    echo "<pre>";
+    var_dump($variable);
+    echo "</pre>";
+    exit;
+}
+
 function register_my_menus() {
     register_nav_menus(
         array(
@@ -70,7 +77,6 @@ function registrar_vista_entrada() {
     }
 }
 add_action('wp', 'registrar_vista_entrada');
-
 
 
 if( function_exists('acf_add_options_page') ) {
@@ -101,7 +107,6 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug' => 'theme-general-settings'
     ));
 }
-
 
 
 require_once get_template_directory().'/inc/functions/opciones.php';
